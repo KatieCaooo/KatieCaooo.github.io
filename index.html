@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thu Cao - Product Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --background-color: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            background: 
+                linear-gradient(135deg, #f5f7fa 21px, #e9ecef 22px, #e9ecef 24px, transparent 24px, transparent 67px, #e9ecef 67px, #e9ecef 69px, transparent 69px),
+                linear-gradient(225deg, #f5f7fa 21px, #e9ecef 22px, #e9ecef 24px, transparent 24px, transparent 67px, #e9ecef 67px, #e9ecef 69px, transparent 69px)0 64px;
+            background-color: #f5f7fa;
+            background-size: 64px 128px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .contact-info {
+            color: white;
+            margin-top: 0.5rem;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info i {
+            margin-right: 0.5rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .experience-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            border-left: 3px solid var(--secondary-color);
+            background: linear-gradient(to right, rgba(52, 152, 219, 0.05), transparent);
+        }
+
+        .job-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+
+        .company {
+            font-weight: bold;
+        }
+
+        .period {
+            color: #666;
+            font-style: italic;
+        }
+
+        ul {
+            margin-top: 0.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-top: 3px solid var(--secondary-color);
+        }
+
+        .skill-category h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+
+        .core-achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .achievement-card {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform var(--transition-speed);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-4px);
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 1rem;
+            }
+            section {
+                box-shadow: none;
+            }
+            .skill-category {
+                box-shadow: none;
+            }
+            .achievement-card:hover,
+            .skill-category:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CAO THANH THU</h1>
+            <div class="contact-info">
+                <strong>Product Manager</strong>
+                <p>
+                    HCMC, Vietnam · <a href="tel:+84988388736"><i class="fas fa-phone"></i> (+84) 988 388 736</a> · <a href="mailto:katiecaooo@gmail.com"><i class="fas fa-envelope"></i> katiecaooo@gmail.com</a> · <a href="https://www.linkedin.com/in/katiecaooo" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a><br>
+                </p>
+            </div>
+        </header>
+
+        <section>
+            <h2><i class="fas fa-user"></i> SUMMARY</h2>
+            <p>Dynamic Product Manager with a Computer Software Engineering background and certifications in project management. Experienced in leading cross-functional teams and launching innovative digital solutions, with proven success in enhancing efficiency and stakeholder collaboration.</p>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-briefcase"></i> EXPERIENCE</h2>
+            
+            <div class="experience-item">
+                <div class="job-title">Freelancer</div>
+                <div class="company">Product Owner & Tester</div>
+                <div class="period">March 2023 – Now | HCMC, Vietnam</div>
+                <ul>
+                    <li>Consulting and analyzing necessary features for projects.</li>
+                    <li>Guiding students to do graduation projects.</li>
+                    <li>Documented key project milestones and delivered comprehensive reports to stakeholders.</li>
+                    <li>Facilitated Scrum ceremonies, ensuring effective team collaboration.</li>
+                    <li>Testing features</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Associate Product Manager</div>
+                <div class="company">Tiki Company Ltd.</div>
+                <div class="period">Nov 2021 – Dec 2022 | HCMC, Vietnam</div>
+                <ul>
+                    <li>Led cross-functional team to improve stakeholder communication and successfully oversaw product development from inception to implementation, resulting in a 20% increase in efficiency.</li>
+                    <li>Developed and maintained the solution vision and roadmap throughout the project's life cycle.</li>
+                    <li>Learn and integrate partner APIs into products.</li>
+                    <li>Managed entire product development cycle stages, including analysis, design, building, sharing, and access.</li>
+                    <li>Managed the implementation and testing process for features.</li>
+                    <li>Authored API documentation that streamlined partner integrations, reducing onboarding time by 30%</li>
+                    <li>Managed product development deliverables and planning, including:
+                        <ul>
+                            <li>Successfully delivered over 10 product requirements documents, prepared feature specifications, wire-frames & mock-ups, assessed feature feasibility, and finalized solutions with technical/design teams.</li>
+                            <li>Defined and communicated the release plan to stakeholders, and effectively managed and prioritized product backlogs.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-title">Team Backend Developer</div>
+                <div class="company">FPT Software Company Ltd.</div>
+                <div class="period">Jun 2021 – Oct 2021 | HCMC, Vietnam</div>
+                <ul>
+                    <li>Developed Restful APIs of web services for the statistical website that ensures system performance.</li>
+                    <li>Wrote data migration queries for ETL processes.</li>
+                    <li>Implemented Agile development process using Scrum framework, resulting in a 10% increase in team productivity.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <div class="job-title">Backend Developer & Business Analyst</div>
+                <div class="company">FPT University</div>
+                <div class="period">Jan 2021 – May 2021 | HCMC, Vietnam</div>
+                <ul>
+                    <li>Implemented Restful APIs, and designed database and architecture.</li>
+                    <li>Reviewed and documented software requirements specifications.</li>
+                    <li>Drew ERD, class diagrams, use case diagrams, sequence diagrams, screen flow...</li>
+                    <li>Implemented Agile Scrum methodology to increase team productivity and reduce time-to-market.</li>
+                    <li> Listed product backlog, planned sprint, reviewed sprint.</li>
+                    <li>Identified and documented problems for improvement, resulting in a 20% increase in efficiency for the next sprints.</li>
+                    <li>Wrote the reports and the meeting minutes.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-graduation-cap"></i> EDUCATION</h2>
+            <div class="experience-item">
+                <div class="job-title">Bachelor of Software Engineering</div>
+                <div class="company">FPT University - Ho Chi Minh</div>
+                <div class="period">May 2017 – Apr 2021</div>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-certificate"></i> LICENSES & CERTIFICATIONS</h2>
+            <ul>
+                <li>English: Intermediate (IELTS Band 6.0 expected) - Jan 2025</li>
+                <li>B2 UPPER INTERMEDIATE by EF International Language Campuses - Sep 2023
+                    <br>Credential ID: <a href="https://cert.efset.org/BDdSFQ" target="_blank"><i class="fas fa-link"></i> BDdSFQ</a></li>
+                <li>Project Management Principles and Practices Specialization by Coursera - Jun 2020
+                    <br>Credential ID: <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/FWSJNSVNXLXH" target="_blank"><i class="fas fa-link"></i> FWSJNSVNXLXH</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-trophy"></i> CORE ACHIEVEMENTS</h2>
+            <div class="core-achievements">
+                <div class="achievement-card">
+                    <h3>Stakeholder Communication</h3>
+                    <p>Led cross-functional teams to achieve 20% increase in efficiency through improved communication protocols and streamlined workflows.</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>Technical Documentation</h3>
+                    <p>Reduced partner onboarding time by 30% through comprehensive API documentation and integration guides.</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>Product Development</h3>
+                    <p>Successfully delivered 10+ product requirement documents and managed complete product development lifecycle.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2><i class="fas fa-code"></i> SKILLS</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-user-friends"></i> Soft Skills</h3>
+                    <p>Critical Thinking, Strategic Problem Solving, Advanced Analytical Skills, Cross-functional Teamwork, Communication, Presentation</p>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Tech Stack</h3>
+                    <p><strong>Analytics & Tools:</strong> Amplitude, Figma, Jira, Confluence, Microsoft Office</p>
+                    <p><strong>Programming:</strong> SQL, Java, .NET</p>
+                    <p><strong>Methodologies:</strong> Agile, Scrum, A/B Testing</p>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-industry"></i> Industry Knowledge</h3>
+                    <p>E-Commerce, Product Management, Software Documentation, Agile Methodologies, Data Analytics, Flow Diagrams, UX/UI Sketching</p>
+                </div>
+            </div>
+        </section>
+        
+    </div>
+</body>
+</html>
