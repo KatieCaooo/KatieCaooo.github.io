@@ -9,8 +9,8 @@
         /* Theme Colors */
         .theme-default {
             --primary: #2D3748;
-            --accent: #4299E1;
-            --accent-light: #EBF8FF;
+            --accent: #1e8feb;
+            --accent-light: 	#cbecfb;
             --text: #4A5568;
             --background: #FFFFFF;
         }
@@ -37,6 +37,22 @@
             --accent-light: #EBF8FF;
             --text: #2C5282;
             --background: #FFFFFF;
+        }
+        
+        .theme-ocean-dark {
+            --primary: #2B6CB0;
+            --accent: #63B3ED;
+            --accent-light: #12264d;
+            --text: #b8cbf1;
+            --background: #1A202C;
+        }
+
+        .theme-random-dark {
+            --primary: rgb(147, 6, 83);
+            --accent: #b8146e;
+            --accent-light: #6B7280;
+            --text: #D3D3D3;
+            --background: #1F2937;
         }
 
         /* Theme Switcher */
@@ -84,6 +100,14 @@
 
         .theme-btn.ocean {
             background: #2B6CB0;
+        }
+
+        .theme-btn.ocean-dark {
+            background: #2A4365;
+        }
+
+        .theme-btn.random-dark {
+            background: #4B5563;
         }
 
         * {
@@ -218,7 +242,7 @@
         /* Contact Section */
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            grid-template-columns: repeat(2, minmax(min(250px, 100%), 1fr));
             gap: clamp(1.5rem, 3vw, 3rem);
             align-items: center;
             height: 100%;
@@ -458,6 +482,14 @@
             background-color: var(--accent-light);
         }
 
+        section:nth-child(even) *[class$="-item"] {
+            background-color: var(--accent-light);
+        }
+
+        section:nth-child(odd) *[class$="-item"] {
+            background-color: var(--background);
+        }
+
         /* Footer styles */
         footer {
             background-color: var(--primary);
@@ -530,6 +562,8 @@
     </style>
     <script>
         // Theme Switcher
+        // Navigation functions
+        var currentSection = 'profile';
         document.addEventListener('DOMContentLoaded', function() {
             // Add theme switcher HTML
             const themeSwitcher = document.createElement('div');
@@ -539,6 +573,8 @@
                 <button class="theme-btn nature" onclick="changeTheme('nature')" title="Nature Theme"></button>
                 <button class="theme-btn sunset" onclick="changeTheme('sunset')" title="Sunset Theme"></button>
                 <button class="theme-btn ocean" onclick="changeTheme('ocean')" title="Ocean Theme"></button>
+                <!--<button class="theme-btn ocean-dark" onclick="changeTheme('ocean-dark')" title="Ocean Dark Theme"></button>
+                <button class="theme-btn random-dark" onclick="changeTheme('random-dark')" title="Random Dark Theme"></button>-->
             `;
             document.body.appendChild(themeSwitcher);
 
@@ -574,6 +610,7 @@
                     dot.classList.remove('active');
                     if (dot.getAttribute('onclick').includes(current)) {
                         dot.classList.add('active');
+                        currentSection = current;
                     }
                 });
             });
@@ -593,8 +630,6 @@
                 document.body.classList.add(`theme-${savedTheme}`);
             }
         });
-        // Navigation functions
-        var currentSection = 'profile';
 
         // Load currentSection from localStorage on page load
         window.addEventListener('DOMContentLoaded', (event) => {
@@ -692,9 +727,11 @@
                 </div>
                 <div class="experience-content">
                     <ul class="achievements">
-                        <li>English: Intermediate (IELTS Band 6.0 expected) - Jan 2025</li>
+                        <div class="role">Languages</div>
+                        <li>Intermediate (IELTS Band 6.0 expected) - Jan 2025</li>
                         <li>B2 UPPER INTERMEDIATE by EF International Language Campuses - Sep 2023
                             <br>Credential ID: <a href="https://cert.efset.org/BDdSFQ" target="_blank"><i class="fas fa-link"></i> BDdSFQ</a></li>
+                        <div class="role">Management</div>
                         <li>Project Management Principles and Practices Specialization by Coursera - Jun 2020
                             <br>Credential ID: <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/FWSJNSVNXLXH" target="_blank"><i class="fas fa-link"></i> FWSJNSVNXLXH</a></li>
                     </ul>
@@ -786,15 +823,15 @@
         <div class="container fade-in">
             <h2><i class="fas fa-trophy"></i> Core Achievements</h2>
             <div class="core-achievements">
-                <div class="achievement-card">
+                <div class="achievement-card achievement-item">
                     <h3>Stakeholder Communication</h3>
                     <p>Led cross-functional teams to achieve 20% increase in efficiency through improved communication protocols and streamlined workflows.</p>
                 </div>
-                <div class="achievement-card">
+                <div class="achievement-card achievement-item">
                     <h3>Technical Documentation</h3>
                     <p>Reduced partner onboarding time by 30% through comprehensive API documentation and integration guides.</p>
                 </div>
-                <div class="achievement-card">
+                <div class="achievement-card achievement-item">
                     <h3>Product Development</h3>
                     <p>Successfully delivered 10+ product requirement documents and managed complete product development lifecycle.</p>
                 </div>
