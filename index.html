@@ -242,10 +242,14 @@
         /* Contact Section */
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(min(250px, 100%), 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            max-width: 100%;
             gap: clamp(1.5rem, 3vw, 3rem);
             align-items: center;
             height: 100%;
+            @media (min-width: 768px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .contact-item {
