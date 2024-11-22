@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katie Cao - Product Manager</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
     <style>
-        @font-face {
+        /* @font-face {
             font-family: 'Italianno';
-            src: url('./path/to/italianno-regular.ttf') format('truetype');
-        }
+            src: url('./docs/assets/fonts/Italianno-Regular.ttf') format('truetype');
+        } */
 
         /* Theme Colors */
         .theme-default {
             --primary: #2D3748;
             --accent: #1e8feb;
-            --accent-light: 	#cbecfb;
+            --accent-light: #cbecfb;
             --text: #4A5568;
             --background: #FFFFFF;
         }
@@ -43,7 +44,7 @@
             --text: #2C5282;
             --background: #FFFFFF;
         }
-        
+
         .theme-ocean-dark {
             --primary: #2B6CB0;
             --accent: #63B3ED;
@@ -69,7 +70,7 @@
             background: var(--background);
             padding: 10px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-wrap: wrap;
             gap: 5px;
@@ -215,7 +216,7 @@
             border-radius: 16px;
             border: 4px solid var(--accent);
             overflow: hidden;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             margin: 0 auto;
         }
 
@@ -235,7 +236,7 @@
             margin-bottom: 1rem;
             letter-spacing: -0.05em;
             color: var(--primary);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .title {
@@ -257,6 +258,7 @@
             gap: clamp(1.5rem, 3vw, 3rem);
             align-items: center;
             height: 100%;
+
             @media (min-width: 768px) {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -268,12 +270,12 @@
             transition: all 0.3s ease;
             border-radius: 12px;
             background: var(--background);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
 
         .contact-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
 
         .contact-item i {
@@ -330,7 +332,7 @@
             padding: clamp(1.5rem, 2.5vw, 2.5rem);
             background: var(--background);
             border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -350,7 +352,7 @@
 
         .experience-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
 
         .experience-item:hover::before {
@@ -417,7 +419,7 @@
             background: var(--background);
             padding: clamp(1.5rem, 2vw, 2rem);
             border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
 
@@ -437,7 +439,7 @@
             background: var(--background);
             padding: clamp(1.5rem, 2vw, 2rem);
             border-radius: 16px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
         }
 
@@ -491,7 +493,7 @@
         section:nth-child(even) {
             background-color: var(--background);
         }
-        
+
         section:nth-child(odd) {
             background-color: var(--accent-light);
         }
@@ -559,6 +561,7 @@
 
         /* Print styles */
         @media print {
+
             .nav,
             .theme-switcher {
                 display: none;
@@ -578,7 +581,7 @@
         // Theme Switcher
         // Navigation functions
         var currentSection = 'profile';
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Add theme switcher HTML
             const themeSwitcher = document.createElement('div');
             themeSwitcher.className = 'theme-switcher';
@@ -661,10 +664,12 @@
         function gotoSection(section) {
             currentSection = section; // Update currentSection to the new section
             localStorage.setItem('currentSection', section); // Save currentSection to localStorage
-            document.getElementById(section).scrollIntoView({behavior: 'smooth'});
+            document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
         }
+
     </script>
 </head>
+
 <body>
     <nav class="nav">
         <div class="nav-arrow" onclick="navigateSection('up')" title="Previous Section">
@@ -691,7 +696,8 @@
                     <h1>Katie Cao</h1>
                     <div class="title">Product Manager</div>
                     <div class="summary">
-                        Dynamic Product Manager with engineering background, driving innovation through cross-functional leadership and data-driven decision making.
+                        Dynamic Product Manager with engineering background, driving innovation through cross-functional
+                        leadership and data-driven decision making.
                     </div>
                 </div>
             </div>
@@ -734,7 +740,7 @@
                     <div class="role">Bachelor of Software Engineering</div>
                 </div>
             </div>
-        </br>
+            </br>
             <div class="experience-item">
                 <div class="experience-meta">
                     <div class="company">Certifications</div>
@@ -744,10 +750,15 @@
                         <div class="role">Languages</div>
                         <li>Intermediate (IELTS Band 6.0 expected) - Jan 2025</li>
                         <li>B2 UPPER INTERMEDIATE by EF International Language Campuses - Sep 2023
-                            <br>Credential ID: <a href="https://cert.efset.org/BDdSFQ" target="_blank"><i class="fas fa-link"></i> BDdSFQ</a></li>
+                            <br>Credential ID: <a href="https://cert.efset.org/BDdSFQ" target="_blank"><i
+                                    class="fas fa-link"></i> BDdSFQ</a>
+                        </li>
                         <div class="role">Management</div>
                         <li>Project Management Principles and Practices Specialization by Coursera - Jun 2020
-                            <br>Credential ID: <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/FWSJNSVNXLXH" target="_blank"><i class="fas fa-link"></i> FWSJNSVNXLXH</a></li>
+                            <br>Credential ID: <a
+                                href="https://www.coursera.org/account/accomplishments/specialization/certificate/FWSJNSVNXLXH"
+                                target="_blank"><i class="fas fa-link"></i> FWSJNSVNXLXH</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -768,7 +779,8 @@
                         <ul class="achievements">
                             <li>Consulting and analyzing necessary features for projects.</li>
                             <li>Guiding students to do graduation projects.</li>
-                            <li>Documented key project milestones and delivered comprehensive reports to stakeholders.</li>
+                            <li>Documented key project milestones and delivered comprehensive reports to stakeholders.
+                            </li>
                             <li>Facilitated Scrum ceremonies, ensuring effective team collaboration.</li>
                             <li>Testing features</li>
                         </ul>
@@ -782,16 +794,24 @@
                     <div class="experience-content">
                         <div class="role">Associate Product Manager</div>
                         <ul class="achievements">
-                            <li>Led cross-functional team to improve stakeholder communication and successfully oversaw product development from inception to implementation, resulting in a 20% increase in efficiency.</li>
-                            <li>Developed and maintained the solution vision and roadmap throughout the project's life cycle.</li>
+                            <li>Led cross-functional team to improve stakeholder communication and successfully oversaw
+                                product development from inception to implementation, resulting in a 20% increase in
+                                efficiency.</li>
+                            <li>Developed and maintained the solution vision and roadmap throughout the project's life
+                                cycle.</li>
                             <li>Learn and integrate partner APIs into products.</li>
-                            <li>Managed entire product development cycle stages, including analysis, design, building, sharing, and access.</li>
+                            <li>Managed entire product development cycle stages, including analysis, design, building,
+                                sharing, and access.</li>
                             <li>Managed the implementation and testing process for features.</li>
-                            <li>Authored API documentation that streamlined partner integrations, reducing onboarding time by 30%</li>
+                            <li>Authored API documentation that streamlined partner integrations, reducing onboarding
+                                time by 30%</li>
                             <li>Managed product development deliverables and planning, including:
                                 <ul>
-                                    <li>Successfully delivered over 10 product requirements documents, prepared feature specifications, wire-frames & mock-ups, assessed feature feasibility, and finalized solutions with technical/design teams.</li>
-                                    <li>Defined and communicated the release plan to stakeholders, and effectively managed and prioritized product backlogs.</li>
+                                    <li>Successfully delivered over 10 product requirements documents, prepared feature
+                                        specifications, wire-frames & mock-ups, assessed feature feasibility, and
+                                        finalized solutions with technical/design teams.</li>
+                                    <li>Defined and communicated the release plan to stakeholders, and effectively
+                                        managed and prioritized product backlogs.</li>
                                 </ul>
                             </li>
                         </ul>
@@ -805,9 +825,11 @@
                     <div class="experience-content">
                         <div class="role">Team Backend Developer</div>
                         <ul class="achievements">
-                            <li>Developed Restful APIs of web services for the statistical website that ensures system performance.</li>
+                            <li>Developed Restful APIs of web services for the statistical website that ensures system
+                                performance.</li>
                             <li>Wrote data migration queries for ETL processes.</li>
-                            <li>Implemented Agile development process using Scrum framework, resulting in a 10% increase in team productivity.</li>
+                            <li>Implemented Agile development process using Scrum framework, resulting in a 10% increase
+                                in team productivity.</li>
                         </ul>
                     </div>
                 </div>
@@ -822,9 +844,11 @@
                             <li>Implemented Restful APIs, and designed database and architecture.</li>
                             <li>Reviewed and documented software requirements specifications.</li>
                             <li>Drew ERD, class diagrams, use case diagrams, sequence diagrams, screen flow...</li>
-                            <li>Implemented Agile Scrum methodology to increase team productivity and reduce time-to-market.</li>
+                            <li>Implemented Agile Scrum methodology to increase team productivity and reduce
+                                time-to-market.</li>
                             <li>Listed product backlog, planned sprint, reviewed sprint.</li>
-                            <li>Identified and documented problems for improvement, resulting in a 20% increase in efficiency for the next sprints.</li>
+                            <li>Identified and documented problems for improvement, resulting in a 20% increase in
+                                efficiency for the next sprints.</li>
                             <li>Wrote the reports and the meeting minutes.</li>
                         </ul>
                     </div>
@@ -839,15 +863,18 @@
             <div class="core-achievements">
                 <div class="achievement-card achievement-item">
                     <h3>Stakeholder Communication</h3>
-                    <p>Led cross-functional teams to achieve 20% increase in efficiency through improved communication protocols and streamlined workflows.</p>
+                    <p>Led cross-functional teams to achieve 20% increase in efficiency through improved communication
+                        protocols and streamlined workflows.</p>
                 </div>
                 <div class="achievement-card achievement-item">
                     <h3>Technical Documentation</h3>
-                    <p>Reduced partner onboarding time by 30% through comprehensive API documentation and integration guides.</p>
+                    <p>Reduced partner onboarding time by 30% through comprehensive API documentation and integration
+                        guides.</p>
                 </div>
                 <div class="achievement-card achievement-item">
                     <h3>Product Development</h3>
-                    <p>Successfully delivered 10+ product requirement documents and managed complete product development lifecycle.</p>
+                    <p>Successfully delivered 10+ product requirement documents and managed complete product development
+                        lifecycle.</p>
                 </div>
             </div>
         </div>
@@ -859,19 +886,21 @@
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3><i class="fas fa-user-friends"></i> Soft Skills</h3>
-                    <p>Critical Thinking, Strategic Problem Solving, Advanced Analytical Skills, Cross-functional Teamwork, Communication, Presentation</p>
+                    <p>Critical Thinking, Strategic Problem Solving, Advanced Analytical Skills, Cross-functional
+                        Teamwork, Communication, Presentation</p>
                 </div>
-                
+
                 <div class="skill-category">
                     <h3><i class="fas fa-laptop-code"></i> Tech Stack</h3>
                     <p><strong>Analytics & Tools:</strong> Amplitude, Figma, Jira, Confluence, Microsoft Office</p>
                     <p><strong>Programming:</strong> SQL, Java, .NET</p>
                     <p><strong>Methodologies:</strong> Agile, Scrum, A/B Testing</p>
                 </div>
-                
+
                 <div class="skill-category">
                     <h3><i class="fas fa-industry"></i> Industry Knowledge</h3>
-                    <p>E-Commerce, Product Management, Software Documentation, Agile Methodologies, Data Analytics, Flow Diagrams, UX/UI Sketching</p>
+                    <p>E-Commerce, Product Management, Software Documentation, Agile Methodologies, Data Analytics, Flow
+                        Diagrams, UX/UI Sketching</p>
                 </div>
             </div>
         </div>
@@ -886,4 +915,5 @@
     </footer>
 
 </body>
+
 </html>
