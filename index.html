@@ -327,7 +327,7 @@
 
         .experience-item {
             display: grid;
-            grid-template-columns: minmax(min(150px, 100%), 1fr) minmax(min(300px, 100%), 2fr);
+            grid-template-columns: 1fr 2fr;
             gap: clamp(1rem, 2vw, 2rem);
             padding: clamp(1.5rem, 2.5vw, 2.5rem);
             background: var(--background);
@@ -463,9 +463,27 @@
                 display: none;
             }
 
+            .experience-item {
+                grid-template-columns: 1fr;
+            }
+
             .experience-meta {
                 border-right: none;
-                border-bottom: 1px solid var(--accent-light);
+                border-bottom: 2px solid var(--accent-light);
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            section:nth-child(even) .experience-meta {
+                border-right: none;
+                border-bottom: 2px solid var(--background);
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            section:nth-child(odd) .experience-meta {
+                border-right: none;
+                border-bottom: 2px solid var(--accent-light);
                 padding-bottom: 1rem;
                 margin-bottom: 1rem;
             }
@@ -478,10 +496,6 @@
 
             .profile-content {
                 text-align: center;
-            }
-
-            .experience-item {
-                grid-template-columns: 1fr;
             }
         }
 
