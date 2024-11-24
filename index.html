@@ -327,7 +327,7 @@
 
         .experience-item {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            grid-template-columns: minmax(min(150px, 100%), 1fr) minmax(min(300px, 100%), 2fr);
             gap: clamp(1rem, 2vw, 2rem);
             padding: clamp(1.5rem, 2.5vw, 2.5rem);
             background: var(--background);
@@ -361,7 +361,11 @@
 
         .experience-meta {
             padding-right: clamp(1rem, 2vw, 2rem);
-            border-right: 1px solid var(--accent-light);
+            border-right: 2px solid var(--background);
+        }
+
+        section:nth-child(odd) .experience-meta {
+            border-right: 2px solid var(--accent-light);
         }
 
         .experience-meta .company {
@@ -474,6 +478,10 @@
 
             .profile-content {
                 text-align: center;
+            }
+
+            .experience-item {
+                grid-template-columns: 1fr;
             }
         }
 
