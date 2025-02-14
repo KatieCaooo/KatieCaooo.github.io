@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Katie Cao - Product Manager</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
-      <style>
-         /* @font-face {
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katie Cao - Product Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <style>
+        /* @font-face {
          font-family: 'Italianno';
          src: url('./docs/assets/fonts/Italianno-Regular.ttf') format('truetype');
          } */
@@ -206,7 +207,7 @@
          align-items: center;
          height: 100%;
          @media (min-width: 768px) {
-         grid-template-columns: repeat(2, 1fr);
+         grid-template-columns: repeat(3, 1fr);
          }
          }
          .contact-item {
@@ -489,9 +490,9 @@
          max-width: 100%;
          }
          }
-      </style>
-      <script>
-         // Theme Switcher
+    </style>
+    <script>
+        // Theme Switcher
          // Navigation functions
          var currentSection = 'profile';
          document.addEventListener('DOMContentLoaded', function () {
@@ -577,364 +578,391 @@
              localStorage.setItem('currentSection', section); // Save currentSection to localStorage
              document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
          }
-         
-      </script>
-   </head>
-   <body>
-      <nav class="nav">
-         <div class="nav-arrow" onclick="navigateSection('up')" title="Previous Section">
+    </script>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-arrow" onclick="navigateSection('up')" title="Previous Section">
             <i class="fas fa-angle-up" title="Previous Section"></i>
-         </div>
-         <div class="nav-dot" onclick="gotoSection('profile')">
+        </div>
+        <div class="nav-dot" onclick="gotoSection('profile')">
             <i class="fas fa-user" title="Profile"></i>
-         </div>
-         <div class="nav-dot" onclick="gotoSection('contact')">
+        </div>
+        <div class="nav-dot" onclick="gotoSection('contact')">
             <i class="fas fa-address-card" title="Contact Information"></i>
-         </div>
-         <div class="nav-dot" onclick="gotoSection('education')">
+        </div>
+        <div class="nav-dot" onclick="gotoSection('education')">
             <i class="fas fa-graduation-cap" title="Education & Certifications"></i>
-         </div>
-         <div class="nav-dot" onclick="gotoSection('experience')">
+        </div>
+        <div class="nav-dot" onclick="gotoSection('experience')">
             <i class="fas fa-suitcase" title="Professional Experience"></i>
-         </div>
-         <div class="nav-dot" onclick="gotoSection('portfolios')">
+        </div>
+        <div class="nav-dot" onclick="gotoSection('portfolios')">
             <i class="fas fa-folder-open" title="Portfolios"></i>
-         </div>
-         <div class="nav-dot" onclick="gotoSection('achievements')">
+        </div>
+        <div class="nav-dot" onclick="gotoSection('achievements')">
             <i class="fas fa-trophy" title="Core Achievements"></i>
-         </div>
-         <div class="nav-dot" onclick="gotoSection('skills')">
+        </div>
+        <div class="nav-dot" onclick="gotoSection('skills')">
             <i class="fas fa-gear" title="Skills"></i>
-         </div>
-         <div class="nav-arrow" onclick="navigateSection('down')" title="Next Section">
+        </div>
+        <div class="nav-arrow" onclick="navigateSection('down')" title="Next Section">
             <i class="fas fa-angle-down" title="Next Section"></i>
-         </div>
-      </nav>
-      <section id="profile" class="profile-section">
-         <div class="container fade-in">
+        </div>
+    </nav>
+    <section id="profile" class="profile-section">
+        <div class="container fade-in">
             <div class="profile-grid">
-               <div class="profile-image">
-                  <img src="./docs/assets/profile.jpg" alt="Katie Cao" />
-               </div>
-               <div class="profile-content">
-                  <h1>Hi, I'm Katie Cao</h1>
-                  <div class="title">Product Manager</div>
-                  <div class="summary"> My Vietnamese name is <b>Cao Thanh Thu</b>
-                     <br/>I'm a Product Manager with a background in <b>backend development</b> and <b>product management</b>. I graduated from FPT University and have over three years of experience, including roles in <b>quality assurance</b>. I specialize in bridging technical and business needs to deliver high-quality, user-focused products. Explore my portfolio to learn more! 
-                  </div>
-               </div>
+                <div class="profile-image">
+                    <img src="./docs/assets/profile.jpg" alt="Katie Cao" />
+                </div>
+                <div class="profile-content">
+                    <h1>Hi, I'm Katie Cao</h1>
+                    <div class="title">Product Manager</div>
+                    <div class="summary"> My Vietnamese name is <b>Cao Thanh Thu</b>
+                        <br/>I'm a Product Manager with a background in <b>backend development</b> and <b>product management</b>. I graduated from FPT University and have over three years of experience, including roles in <b>quality assurance</b>. I specialize
+                        in bridging technical and business needs to deliver high-quality, user-focused products. Explore my portfolio to learn more!
+                    </div>
+                </div>
             </div>
-         </div>
-      </section>
-      <section id="contact">
-         <div class="container fade-in">
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container fade-in">
             <h2>
                <i class="fas fa-address-card"></i> Contact Information
             </h2>
             <div class="contact-grid">
-               <div class="contact-item">
-                  <a href="mailto:katiecaooo@gmail.com">
-                     <i class="fas fa-envelope"></i>
-                     <div>katiecaooo@gmail.com</div>
-                  </a>
-               </div>
-               <div class="contact-item">
-                  <i class="fas fa-phone"></i>
-                  <a href="tel:+84988388736">
-                     <div>(+84) 988 388 736</div>
-                  </a>
-               </div>
-               <div class="contact-item">
-                  <a href="https://www.linkedin.com/in/katiecaooo">
-                     <i class="fab fa-linkedin"></i>
-                     <div>
-                        View my Linkedin
-                     </div>
-                  </a>
-               </div>
-               <div class="contact-item">
-                  <a href="http://t.me/katiecaooo">
-                     <i class="fa-brands fa-telegram"></i>                  
-                     <div>Text me on Telegram</div>
-                  </a>
-               </div>
+                <div class="contact-item">
+                    <a href="mailto:katiecaooo@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                        <div>katiecaooo@gmail.com</div>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+84988388736">
+                        <div>(+84) 988 388 736</div>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://www.linkedin.com/in/katiecaooo">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            View my Linkedin
+                        </div>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="https://wa.me/84988388736">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <div>
+                            Whatsapp me
+                        </div>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="http://t.me/katiecaooo">
+                        <i class="fa-brands fa-telegram"></i>
+                        <div>Text me on Telegram</div>
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="imessage://katiecaooo@gmail.com">
+                        <i class="fa-regular fa-message"></i>
+                        <div>Message me on iMessage</div>
+                    </a>
+                </div>
             </div>
-         </div>
-      </section>
-      <section id="education">
-         <div class="container fade-in">
+        </div>
+    </section>
+    <section id="education">
+        <div class="container fade-in">
             <h2>
                <i class="fas fa-graduation-cap"></i> Education & Certifications
             </h2>
             <div class="experience-grid">
-               <div class="experience-item">
-                  <div class="experience-meta">
-                     <div class="company">Education</div>
-                  </div>
-                  <div class="experience-content">
-                     <div class="role">Bachelor of Software Engineering</div>
-                     <b>FPT University - Ho Chi Minh </b>| 2021
-                     <ul class="achievements">
-                        <li>One of Vietnam's leading private universities, renowned for its focus on technology, innovation, and industry-oriented training.</li>
-                        <li>Emphasizes hands-on learning, global integration, and professional development.</li>
-                        <li>Graduates are equipped with strong technical foundations and practical skills to thrive in competitive industries.</li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="experience-item">
-                  <div class="experience-meta">
-                     <div class="company">Certifications</div>
-                  </div>
-                  <div class="experience-content">
-                     <ul class="achievements">
-                        <div class="role">Languages</div>
-                        <li>
-                           <b>IELTS Academic 6.0 Overall</b> 
-                           <br />by British Council | Jan 2025
-                           <br />(L:5.5 | R: 6.0 | W:7.0 | S:5.5)
-                        </li>
-                        <li>
-                           <b>B2 UPPER INTERMEDIATE</b> 
-                           <br />by EF International Language Campuses | Sep 2023 
-                           <br /> Credential ID: <a href="https://cert.efset.org/BDdSFQ" target="_blank"><i class="fas fa-link"></i> BDdSFQ </a>
-                        </li>
-                        <div class="role">Management</div>
-                        <li>
-                           <b>Project Management Principles and Practices Specialization</b> 
-                           <br />by Coursera | Jun 2020 
-                           <br /> Credential ID: <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/FWSJNSVNXLXH" target="_blank"><i class="fas fa-link"></i> FWSJNSVNXLXH </a>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
+                <div class="experience-item">
+                    <div class="experience-meta">
+                        <div class="company">Education</div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="role">Bachelor of Software Engineering</div>
+                        <b>FPT University - Ho Chi Minh </b>| 2021
+                        <ul class="achievements">
+                            <li>One of Vietnam's leading private universities, renowned for its focus on technology, innovation, and industry-oriented training.</li>
+                            <li>Emphasizes hands-on learning, global integration, and professional development.</li>
+                            <li>Graduates are equipped with strong technical foundations and practical skills to thrive in competitive industries.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-meta">
+                        <div class="company">Certifications</div>
+                    </div>
+                    <div class="experience-content">
+                        <ul class="achievements">
+                            <div class="role">Languages</div>
+                            <li>
+                                <b>IELTS Academic 6.0 Overall</b>
+                                <br />by British Council | Jan 2025
+                                <br />(L:5.5 | R: 6.0 | W:7.0 | S:5.5)
+                            </li>
+                            <li>
+                                <b>B2 UPPER INTERMEDIATE</b>
+                                <br />by EF International Language Campuses | Sep 2023
+                                <br /> Credential ID: <a href="https://cert.efset.org/BDdSFQ" target="_blank"><i class="fas fa-link"></i> BDdSFQ </a>
+                            </li>
+                            <li>
+                                <b>VIETNAMESE - NATIVE</b>
+                            </li>
+                            <div class="role">Management</div>
+                            <li>
+                                <b>Project Management Principles and Practices Specialization</b>
+                                <br />by Coursera | Jun 2020
+                                <br /> Credential ID: <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/FWSJNSVNXLXH" target="_blank"><i class="fas fa-link"></i> FWSJNSVNXLXH </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-         </div>
-      </section>
-      <section id="experience">
-         <div class="container fade-in">
+        </div>
+    </section>
+    <section id="experience">
+        <div class="container fade-in">
             <h2>
                <i class="fas fa-suitcase"></i> Professional Experience
             </h2>
             <div class="experience-grid">
-               <div class="experience-item">
-                  <div class="experience-meta">
-                     <div class="company">HEALIVERSE</div>
-                     <div class="period">Sep 2024 – Now | HCMC, Vietnam</div>
-                  </div>
-                  <div class="experience-content">
-                     <div class="role">Technical Product Owner @Healthy Beauty</div>
-                     <ul class="achievements">
-                        <b>Online Pharmacy Platform</b>
-                        <li><b>Market Research & Analysis:</b> Conducted in-depth research and competitor analysis of existing online pharmacy platforms to identify market gaps and opportunities.</li>
-                        <li><b>UI/UX Design:</b> Created detailed UI/UX sketches for the mobile application, outlining user flows and features to enhance user experience and ensure ease of use.</li>
-                        <li><b>Admin Management Web Development:</b> Designed and oversaw the development of an admin management web application, including modules for inventory management, order tracking, and invoice processing.</li>
-                        <li><b>Requirement Documentation:</b> Defined and documented detailed functional requirements for both mobile and web platforms, aligning with business objectives and stakeholder expectations.</li>
-                        <li><b>Stakeholder Communication:</b> Delivered project presentations to partners, showcasing key features, technical solutions, and business value to secure buy-in and feedback.</li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="experience-item">
-                  <div class="experience-meta">
-                     <div class="company">Freelance</div>
-                     <div class="period">March 2023 – Sep 2024 | HCMC, Vietnam</div>
-                  </div>
-                  <div class="experience-content">
-                     <div class="role">Quality Assurance</div>
-                     <ul class="achievements">
-                        <li>
-                           <b>Crypto Wallet Testing:</b> Conducted comprehensive testing for a crypto wallet app, validating functionality, security, and user experience to ensure a reliable and secure product.
-                        </li>
-                        <li>
-                           <b>Testing and Quality Assurance:</b>
-                           <ul>
-                              <li>Executed detailed testing procedures to validate the functionality, reliability, and performance of software features.</li>
-                              <li>Monitored call recordings and provided real-time feedback to agents, ensuring high-quality customer interactions and compliance with company standards.</li>
-                              <li>Conducted quality scoring of agent calls, identifying areas for improvement, recognizing top performance, and proposing actionable solutions to enhance overall efficiency.</li>
-                           </ul>
-                        </li>
-                        <li>
-                           <b>Quality Control:</b>
-                           <ul>
-                              <li>Detected and documented instances of non-compliance and worked with teams to address and resolve issues effectively.</li>
-                              <li>Suggested process improvements to enhance call quality, customer satisfaction, and overall operational success.</li>
-                           </ul>
-                        </li>
-                     </ul>
-                     <div class="role">Product Owner</div>
-                     <ul class="achievements">
-                        <li>
-                           <b>Consulted and Analyzed Features:</b> Collaborated with stakeholders to identify and evaluate necessary features for various projects, ensuring alignment with business goals.
-                        </li>
-                        <li>
-                           <b>Guided Students:</b> Mentored and guided students in completing graduation projects, providing technical and strategic support throughout the process.
-                        </li>
-                        <li>
-                           <b>Documentation:</b> Documented key project milestones, delivering comprehensive and insightful reports to stakeholders to track progress and drive decisions.
-                        </li>
-                        <li>
-                           <b>Scrum Facilitation:</b> Organized and facilitated Scrum ceremonies, fostering team collaboration and ensuring adherence to Agile practices.
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="experience-item">
-                  <div class="experience-meta">
-                     <div class="company">Tiki Company Ltd.</div>
-                     <div class="period">Nov 2021 – Dec 2022 | HCMC, Vietnam</div>
-                  </div>
-                  <div class="experience-content">
-                     <div class="role">Associate Product Manager @TicketBox | VAS | TikiVIP</div>
-                     <ul class="achievements">
-                        <li>Led cross-functional team to improve stakeholder communication and successfully oversaw product development from inception to implementation, resulting in a 20% increase in efficiency.</li>
-                        <li>Developed and maintained the solution vision and roadmap throughout the project's life cycle.</li>
-                        <li>Learned and integrated partner APIs into products, authoring API documentation that streamlined partner integrations and reduced onboarding time by 30%.</li>
-                        <li>Managed all stages of the product development lifecycle, including analysis, design, building, testing, and sharing access.</li>
-                        <li>Proactively followed and tested product features continuously from start to finish, identifying root causes of bugs and collaborating with development teams to resolve them.</li>
-                        <li>Authored detailed test case documentation to streamline testing processes and reduce overall testing time, ensuring product quality and faster delivery cycles.</li>
-                        <li>
-                           Managed product development deliverables and planning, including: 
-                           <ul>
-                              <li> Successfully delivered over 10 product requirement documents (PRDs), prepared feature specifications, wireframes, and mock-ups, assessed feature feasibility, and finalized solutions with technical and design teams. </li>
-                              <li>Defining and communicating release plans to stakeholders and effectively managing and prioritizing product backlogs.</li>
-                           </ul>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="experience-item">
-                  <div class="experience-meta">
-                     <div class="company">FPT Software Company Ltd.</div>
-                     <div class="period">Jun 2021 – Oct 2021 | HCMC, Vietnam</div>
-                  </div>
-                  <div class="experience-content">
-                     <div class="role">Backend Developer @Shiseido | General Electric</div>
-                     <ul class="achievements">
-                        <li>Developed Restful APIs of web services for the statistical website that ensures system performance.</li>
-                        <li>Wrote data migration queries for ETL processes.</li>
-                        <li>Implemented Agile development process using Scrum framework, resulting in a 10% increase in team productivity.</li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="experience-item">
-                  <div class="experience-meta">
-                     <div class="company">FPT University</div>
-                     <div class="period">Jan 2021 – May 2021 | HCMC, Vietnam</div>
-                  </div>
-                  <div class="experience-content">
-                     <div class="role">Backend Developer & Business Analyst @MAVCA</div>
-                     <ul class="achievements">
-                        <li>Implemented Restful APIs, and designed database and architecture.</li>
-                        <li>Reviewed and documented software requirements specifications.</li>
-                        <li>Drew ERD, class diagrams, use case diagrams, sequence diagrams, screen flow...</li>
-                        <li>Implemented Agile Scrum methodology to increase team productivity and reduce time-to-market.</li>
-                        <li>Listed product backlog, planned sprint, reviewed sprint.</li>
-                        <li>Identified and documented problems for improvement, resulting in a 20% increase in efficiency for the next sprints.</li>
-                        <li>Wrote the reports and the meeting minutes.</li>
-                     </ul>
-                  </div>
-               </div>
+                <div class="experience-item">
+                    <div class="experience-meta">
+                        <div class="company">HEALIVERSE</div>
+                        <div class="period">Sep 2024 – Now | HCMC, Vietnam</div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="role">Technical Product Owner @Healthy Beauty</div>
+                        <ul class="achievements">
+                            <b>Online Pharmacy Platform</b>
+                            <li><b>Market Research & Analysis:</b> Conducted in-depth research and competitor analysis of existing online pharmacy platforms to identify market gaps and opportunities.</li>
+                            <li><b>UI/UX Design:</b> Created detailed UI/UX sketches for the mobile application, outlining user flows and features to enhance user experience and ensure ease of use.</li>
+                            <li><b>Admin Management Web Development:</b> Designed and oversaw the development of an admin management web application, including modules for inventory management, order tracking, and invoice processing.</li>
+                            <li><b>Requirement Documentation:</b> Defined and documented detailed functional requirements for both mobile and web platforms, aligning with business objectives and stakeholder expectations.</li>
+                            <li><b>Stakeholder Communication:</b> Delivered project presentations to partners, showcasing key features, technical solutions, and business value to secure buy-in and feedback.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-meta">
+                        <div class="company">Freelance</div>
+                        <div class="period">March 2023 – Sep 2024 | HCMC, Vietnam</div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="role">Quality Assurance</div>
+                        <ul class="achievements">
+                            <li>
+                                <b>Crypto Wallet Testing:</b> Conducted comprehensive testing for a crypto wallet app, validating functionality, security, and user experience to ensure a reliable and secure product.
+                            </li>
+                            <li>
+                                <b>Testing and Quality Assurance:</b>
+                                <ul>
+                                    <li>Executed detailed testing procedures to validate the functionality, reliability, and performance of software features.</li>
+                                    <li>Monitored call recordings and provided real-time feedback to agents, ensuring high-quality customer interactions and compliance with company standards.</li>
+                                    <li>Conducted quality scoring of agent calls, identifying areas for improvement, recognizing top performance, and proposing actionable solutions to enhance overall efficiency.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <b>Quality Control:</b>
+                                <ul>
+                                    <li>Detected and documented instances of non-compliance and worked with teams to address and resolve issues effectively.</li>
+                                    <li>Suggested process improvements to enhance call quality, customer satisfaction, and overall operational success.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="role">Product Owner</div>
+                        <ul class="achievements">
+                            <li>
+                                <b>Consulted and Analyzed Features:</b> Collaborated with stakeholders to identify and evaluate necessary features for various projects, ensuring alignment with business goals.
+                            </li>
+                            <li>
+                                <b>Guided Students:</b> Mentored and guided students in completing graduation projects, providing technical and strategic support throughout the process.
+                            </li>
+                            <li>
+                                <b>Documentation:</b> Documented key project milestones, delivering comprehensive and insightful reports to stakeholders to track progress and drive decisions.
+                            </li>
+                            <li>
+                                <b>Scrum Facilitation:</b> Organized and facilitated Scrum ceremonies, fostering team collaboration and ensuring adherence to Agile practices.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-meta">
+                        <div class="company">Tiki Company Ltd.</div>
+                        <div class="period">Nov 2021 – Dec 2022 | HCMC, Vietnam</div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="role">Associate Product Manager @TicketBox | VAS | TikiVIP</div>
+                        <ul class="achievements">
+                            <li>Led cross-functional team to improve stakeholder communication and successfully oversaw product development from inception to implementation, resulting in a 20% increase in efficiency.</li>
+                            <li>Developed and maintained the solution vision and roadmap throughout the project's life cycle.</li>
+                            <li>Learned and integrated partner APIs into products, authoring API documentation that streamlined partner integrations and reduced onboarding time by 30%.</li>
+                            <li>Managed all stages of the product development lifecycle, including analysis, design, building, testing, and sharing access.</li>
+                            <li>Proactively followed and tested product features continuously from start to finish, identifying root causes of bugs and collaborating with development teams to resolve them.</li>
+                            <li>Authored detailed test case documentation to streamline testing processes and reduce overall testing time, ensuring product quality and faster delivery cycles.</li>
+                            <li>
+                                Managed product development deliverables and planning, including:
+                                <ul>
+                                    <li> Successfully delivered over 10 product requirement documents (PRDs), prepared feature specifications, wireframes, and mock-ups, assessed feature feasibility, and finalized solutions with technical and design teams.
+                                    </li>
+                                    <li>Defining and communicating release plans to stakeholders and effectively managing and prioritizing product backlogs.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-meta">
+                        <div class="company">FPT Software Company Ltd.</div>
+                        <div class="period">Jun 2021 – Oct 2021 | HCMC, Vietnam</div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="role">Backend Developer @Shiseido | General Electric</div>
+                        <ul class="achievements">
+                            <li>Developed Restful APIs of web services for the statistical website that ensures system performance.</li>
+                            <li>Wrote data migration queries for ETL processes.</li>
+                            <li>Implemented Agile development process using Scrum framework, resulting in a 10% increase in team productivity.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-meta">
+                        <div class="company">FPT University</div>
+                        <div class="period">Jan 2021 – May 2021 | HCMC, Vietnam</div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="role">Backend Developer & Business Analyst @MAVCA</div>
+                        <ul class="achievements">
+                            <li>Implemented Restful APIs, and designed database and architecture.</li>
+                            <li>Reviewed and documented software requirements specifications.</li>
+                            <li>Drew ERD, class diagrams, use case diagrams, sequence diagrams, screen flow...</li>
+                            <li>Implemented Agile Scrum methodology to increase team productivity and reduce time-to-market.</li>
+                            <li>Listed product backlog, planned sprint, reviewed sprint.</li>
+                            <li>Identified and documented problems for improvement, resulting in a 20% increase in efficiency for the next sprints.</li>
+                            <li>Wrote the reports and the meeting minutes.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-         </div>
-      </section>
-      <section id="portfolios">
-         <div class="container fade-in">
-         <h2>
+        </div>
+    </section>
+    <section id="portfolios">
+        <div class="container fade-in">
+            <h2>
             <i class="fas fa-folder-open"></i> Portfolios
          </h2>
-         <div class="experience-grid">
-            <div class="experience-item">
-               <div class="experience-meta">
-                  <div class="company">HEALIVERSE</div>
-                  <div class="period">Sep 2024 – Now | HCMC, Vietnam</div>
-               </div>
-               <div class="experience-content">
-                  <div class="role">Technical Product Owner @Healthy Beauty</div>
-                  <ul class="achievements">
-                  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQxxK282hG_Ji_zGGurww750_-xiq-RQUyqbeULfQE0TalLfL_82oU8wQH6h85gUdPlhFyIbNkHxEbz/embed?start=false&loop=true&delayms=3000" frameborder="0" width="100%" height="485" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>      
-               </div>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <div class="experience-meta">
+                        <div class="company">HEALIVERSE</div>
+                        <div class="period">Sep 2024 – Now | HCMC, Vietnam</div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="role">Technical Product Owner @Healthy Beauty</div>
+                        <ul class="achievements">
+                            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQxxK282hG_Ji_zGGurww750_-xiq-RQUyqbeULfQE0TalLfL_82oU8wQH6h85gUdPlhFyIbNkHxEbz/embed?start=false&loop=true&delayms=3000" frameborder="0" width="100%" height="485" allowfullscreen="true" mozallowfullscreen="true"
+                            webkitallowfullscreen="true"></iframe>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-meta">
+                        <div class="company">FPT University</div>
+                        <div class="period">Jan 2021 – May 2021 | HCMC, Vietnam</div>
+                    </div>
+                    <div class="experience-content">
+                        <div class="role">Backend Developer & Business Analyst @MAVCA</div>
+                        <ul class="achievements">
+                            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ2cT3Ra9cK4AAYfLF3dWDrkZt912UluVC5vXmFp9KykbTYNlrBVweXtFWXhLkX0A/embed?start=false&loop=true&delayms=3000" frameborder="0" width="100%" height="485" allowfullscreen="true" mozallowfullscreen="true"
+                            webkitallowfullscreen="true"></iframe>
+                            <li>Summary Document: <a href="https://drive.google.com/file/d/1ag8GhUxThJUYYiitYx1CIHvyU242U6yV/view?usp=drive_link" target="_blank"><i class="fas fa-link"></i> Link Google Drive </a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="experience-item">
-               <div class="experience-meta">
-                  <div class="company">FPT University</div>
-                  <div class="period">Jan 2021 – May 2021 | HCMC, Vietnam</div>
-               </div>
-               <div class="experience-content">
-                  <div class="role">Backend Developer & Business Analyst @MAVCA</div>
-                  <ul class="achievements">
-                     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ2cT3Ra9cK4AAYfLF3dWDrkZt912UluVC5vXmFp9KykbTYNlrBVweXtFWXhLkX0A/embed?start=false&loop=true&delayms=3000" frameborder="0" width="100%" height="485" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-                     <li>Summary Document: <a href="https://drive.google.com/file/d/1ag8GhUxThJUYYiitYx1CIHvyU242U6yV/view?usp=drive_link" target="_blank"><i class="fas fa-link"></i> Link Google Drive </a></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </section>
-      <section id="achievements">
-         <div class="container fade-in">
+    </section>
+    <section id="achievements">
+        <div class="container fade-in">
             <h2>
                <i class="fas fa-trophy"></i> Core Achievements
             </h2>
             <div class="core-achievements">
-               <div class="achievement-card achievement-item">
-                  <h3>Stakeholder Communication</h3>
-                  <p>Led cross-functional teams to achieve 20% increase in efficiency through improved communication protocols and streamlined workflows.</p>
-               </div>
-               <div class="achievement-card achievement-item">
-                  <h3>Technical Documentation</h3>
-                  <p>Reduced partner onboarding time by 30% through comprehensive API documentation and integration guides.</p>
-               </div>
-               <div class="achievement-card achievement-item">
-                  <h3>Product Development</h3>
-                  <p>Successfully delivered 10+ product requirement documents and managed complete product development lifecycle.</p>
-               </div>
+                <div class="achievement-card achievement-item">
+                    <h3>Stakeholder Communication</h3>
+                    <p>Led cross-functional teams to achieve 20% increase in efficiency through improved communication protocols and streamlined workflows.</p>
+                </div>
+                <div class="achievement-card achievement-item">
+                    <h3>Technical Documentation</h3>
+                    <p>Reduced partner onboarding time by 30% through comprehensive API documentation and integration guides.</p>
+                </div>
+                <div class="achievement-card achievement-item">
+                    <h3>Product Development</h3>
+                    <p>Successfully delivered 10+ product requirement documents and managed complete product development lifecycle.</p>
+                </div>
             </div>
-         </div>
-      </section>
-      <section id="skills">
-         <div class="container fade-in">
+        </div>
+    </section>
+    <section id="skills">
+        <div class="container fade-in">
             <h2>
                <i class="fas fa-gear"></i> Skills
             </h2>
             <div class="skills-grid">
-               <div class="skill-category">
-                  <h3>
+                <div class="skill-category">
+                    <h3>
                      <i class="fas fa-user-friends"></i> Soft Skills
                   </h3>
-                  <hr />
-                  <p>Critical Thinking, Strategic Problem Solving, Advanced Analytical Skills, Cross-functional Teamwork, Communication, Presentation</p>
-               </div>
-               <div class="skill-category">
-                  <h3>
+                    <hr />
+                    <li>Critical Thinking</li>
+                    <li>Problem Solving</li>
+                    <li>Analytical Skills</li>
+                    <li>Communication</li>
+                    <li>Cross-functional Collaboration</li>
+                    <li>Presentation</li>
+                </div>
+                <div class="skill-category">
+                    <h3>
                      <i class="fas fa-laptop-code"></i> Tech Stack
                   </h3>
-                  <hr />
-                  <p>
-                     <strong>Analytics & Tools:</strong> Amplitude, Figma, Jira, Confluence, Microsoft Office
-                  </p>
-                  <p>
-                     <strong>Programming:</strong> SQL, Java, .NET
-                  </p>
-                  <p>
-                     <strong>Methodologies:</strong> Agile, Scrum, A/B Testing
-                  </p>
-               </div>
-               <div class="skill-category">
-                  <h3>
-                     <i class="fas fa-industry"></i> Industry Knowledge
-                  </h3>
-                  <hr />
-                  <p>E-Commerce, Product Management, Software Documentation, Agile Methodologies, Data Analytics, Flow Diagrams, UX/UI Sketching</p>
-               </div>
+                    <hr />
+                    <p><strong>Product Management & Strategy</strong></p>
+                    <li>Roadmap Planning</li>
+                    <li>Stakeholder Management </li>
+                    <li>Agile (Scrum)</li>
+                    <li>A/B Testing</li>
+                    <li>Software Documentation</li>
+                    <p><strong>Data & Analytics:</strong> Data Analysis, Flow Diagrams, SQL, Amplitude</p>
+                    <p><strong>UX/UI & Tools:</strong> Figma, Jira | Confluence, Microsoft Office</p>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-industry"></i> Industry Knowledge]</h3>
+                    <hr />
+                    <li>E-Commerce</li>
+                    <li>Retail</li>
+                    <li>Crypto</li>
+                    <li>Non-profit / NGO</li>
+                </div>
             </div>
-         </div>
-      </section>
-      <footer>
-         <div class="container">
+        </div>
+    </section>
+    <footer>
+        <div class="container">
             <p>© 2024 Katie Cao. All rights reserved.</p>
             <p>Product Manager | HCMC, Vietnam</p>
             <p>
-               <a href="mailto:katiecaooo@gmail.com">katiecaooo@gmail.com</a>
+                <a href="mailto:katiecaooo@gmail.com">katiecaooo@gmail.com</a>
             </p>
-         </div>
-      </footer>
-   </body>
+        </div>
+    </footer>
+</body>
+
 </html>
