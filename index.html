@@ -117,6 +117,22 @@
   .viewer-frame { aspect-ratio: 16/9; background: #000; }
   .viewer-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
 
+
+  /* CV pop-up */
+  button.btn { cursor: pointer; font-family: inherit; }
+  button.btn-main { border: 0; }
+  dialog.cv { width: min(980px, 96vw); height: min(92vh, 1200px); padding: 0; border: 0; border-radius: 20px; background: var(--surface); box-shadow: 0 24px 70px rgba(40, 20, 10, .35); overflow: hidden; }
+  dialog.cv[open] { display: flex; flex-direction: column; }
+  dialog.cv::backdrop { background: rgba(30, 20, 15, .62); }
+  .cv-bar { display: flex; align-items: center; gap: 10px; padding: 12px 14px 12px 20px; border-bottom: 1px solid var(--line); }
+  .cv-bar strong { font-family: Fraunces, serif; font-size: 18px; color: var(--ink); margin-right: auto; }
+  .cv-bar .btn { padding: 8px 16px; font-size: 14px; }
+  .cv-close { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 8px 14px; font: 700 14px "Nunito Sans", sans-serif; cursor: pointer; }
+  .cv-close:hover { border-color: var(--accent); color: var(--accent); }
+  .cv-body { flex: 1; background: #EEF1F6; }
+  .cv-body iframe { width: 100%; height: 100%; border: 0; display: block; }
+  @media (max-width: 520px) { .cv-bar strong { display: none; } .cv-bar { justify-content: flex-end; } }
+
   /* Experience */
   .exp { background: var(--surface); }
   .timeline { position: relative; margin-left: 8px; }
@@ -197,7 +213,7 @@
       <button type="button" data-lang="en" aria-pressed="true">EN</button>
       <button type="button" data-lang="vi" aria-pressed="false">VI</button>
     </div>
-    <a class="btn btn-main" href="assets/Thanh_Thu_Katie_Product_Owner_CV.pdf" download data-i18n="nav.cv">Download CV</a>
+    <button type="button" class="btn btn-main" data-cv data-i18n="nav.cv">View CV</button>
   </div>
 </nav>
 
@@ -210,7 +226,7 @@
       <p class="intro" data-i18n="hero.intro">I turn <b>complex business rules into clear requirements</b>, then work side by side with developers and QA until the feature is live. I started as a software engineer, so I speak both business and tech.</p>
       <div class="cta">
         <a class="btn btn-main" href="#cases" data-i18n="hero.cta1">See my case studies</a>
-        <a class="btn btn-ghost" href="assets/Thanh_Thu_Katie_Product_Owner_CV.pdf" download data-i18n="hero.cta2">Download CV (PDF)</a>
+        <button type="button" class="btn btn-ghost" data-cv data-i18n="hero.cta2">View my CV</button>
       </div>
       <div class="meta">
         <span data-i18n="hero.m1">2.5+ years in product</span>
@@ -411,21 +427,30 @@
         <a href="sms:+84988388736">iMessage</a>
         <a href="tel:+84988388736" title="(+84) 988 388 736" data-i18n="ct.call">Call me</a>
       </div>
-      <div style="margin-top:26px"><a class="btn btn-ghost" href="assets/Thanh_Thu_Katie_Product_Owner_CV.pdf" download data-i18n="hero.cta2">Download CV (PDF)</a></div>
+      <div style="margin-top:26px"><button type="button" class="btn btn-ghost" data-cv data-i18n="hero.cta2">View my CV</button></div>
     </div>
   </div>
 </section>
+
+<dialog class="cv" id="cv-dialog" aria-label="CV">
+  <div class="cv-bar">
+    <strong>CV · Thanh Thu (Katie)</strong>
+    <a class="btn btn-main" href="assets/Thanh_Thu_Katie_Product_Owner_CV.pdf" download data-i18n="cv.download">Download PDF</a>
+    <button type="button" class="cv-close" id="cv-close" data-i18n="cv.close">Close</button>
+  </div>
+  <div class="cv-body"><iframe id="cv-frame" title="CV of Thanh Thu (Katie)"></iframe></div>
+</dialog>
 
 <footer data-i18n="foot">© 2026 Thanh Thu (Katie) · Last updated 23 Nov 2026</footer>
 
 <script>
   // Vietnamese text. English is the HTML itself and is restored when switching back.
   const VI = {
-    "nav.about": "Giới thiệu", "nav.cases": "Dự án tiêu biểu", "nav.exp": "Kinh nghiệm", "nav.contact": "Liên hệ", "nav.cv": "Tải CV",
+    "nav.about": "Giới thiệu", "nav.cases": "Dự án tiêu biểu", "nav.exp": "Kinh nghiệm", "nav.contact": "Liên hệ", "nav.cv": "Xem CV", "cv.download": "Tải PDF", "cv.close": "Đóng",
     "hero.hello": "Xin chào, mình là",
     "hero.role": "Product Owner · TP. Hồ Chí Minh",
     "hero.intro": "Mình biến <b>những quy tắc nghiệp vụ phức tạp thành yêu cầu rõ ràng</b>, rồi đồng hành cùng developer và QA cho đến khi tính năng được ra mắt. Mình xuất thân là kỹ sư phần mềm, nên hiểu được cả ngôn ngữ kinh doanh lẫn kỹ thuật.",
-    "hero.cta1": "Xem dự án tiêu biểu", "hero.cta2": "Tải CV (PDF)",
+    "hero.cta1": "Xem dự án tiêu biểu", "hero.cta2": "Xem CV của mình",
     "hero.m1": "Hơn 2,5 năm làm sản phẩm", "hero.m2": "Sẵn sàng làm hybrid & từ xa", "hero.m3": "Tiếng Anh & tiếng Việt",
     "hero.noteT": "Hiện tại", "hero.note": "Mình đang chăm bé, xây dựng AnimaLife cùng AI và chuẩn bị cho đội ngũ tiếp theo.",
     "n1": "năm làm vị trí sản phẩm", "n2": "API đối tác đã tích hợp", "n3": "SKU kết nối qua API", "n4": "màn hình đã đặc tả",
@@ -475,6 +500,7 @@
     "sk.eye": "Kỹ năng & học tập", "sk.title": "Những gì mình mang <em class=\"h\">đến cho đội</em>",
     "sk.g1": "Sản phẩm", "sk.g2": "Kỹ thuật", "sk.g3": "Công cụ & cách làm việc",
     "ce.1": "Cử nhân Kỹ thuật Phần mềm", "ce.2": "Bồi dưỡng Nghiệp vụ Sư phạm cho Giảng viên", "ce.2o": "Trường Đại học Sư phạm Hà Nội 2",
+    "cv.eye": "CV của mình", "cv.title": "Toàn bộ câu chuyện, <em class=\"h\">gói gọn trong một trang</em>", "cv.lead": "Xem CV ngay tại đây, rồi tải bản PDF nếu bạn muốn lưu lại.", "cv.full": "Xem toàn màn hình",
     "ct.call": "Gọi cho mình", "ct.mail": "Gửi email cho mình", "ct.title": "Cùng xây dựng sản phẩm <em>mọi người yêu thích</em>",
     "ct.p": "Mình đang tìm vị trí Product Owner tại Việt Nam hoặc làm từ xa. Nếu bạn đang tuyển người, hoặc chỉ muốn trò chuyện về sản phẩm, mình rất mong nhận được tin nhắn của bạn.",
     "foot": "© 2026 Thanh Thu (Katie) · Cập nhật lần cuối 23/11/2026"
@@ -504,6 +530,15 @@
   document.getElementById("viewer-close").addEventListener("click", closeViewer);
   viewer.addEventListener("click", (e) => { if (e.target === viewer) closeViewer(); });
   viewer.addEventListener("close", () => { frame.src = "about:blank"; });
+  // CV pop-up: loads the CV only when opened
+  const cvDialog = document.getElementById("cv-dialog"), cvFrame = document.getElementById("cv-frame");
+  document.querySelectorAll("[data-cv]").forEach((b) => b.addEventListener("click", () => {
+    if (!cvDialog.showModal) { window.open("cv.html", "_blank", "noopener"); return; }
+    if (!cvFrame.getAttribute("src")) cvFrame.src = "cv.html";
+    cvDialog.showModal();
+  }));
+  document.getElementById("cv-close").addEventListener("click", () => cvDialog.close());
+  cvDialog.addEventListener("click", (e) => { if (e.target === cvDialog) cvDialog.close(); });
 </script>
 </body>
 </html>

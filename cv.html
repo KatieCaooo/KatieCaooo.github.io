@@ -1,0 +1,135 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Thanh Thu (Katie) – CV</title>
+<style>
+  @page { size: A4; margin: 13mm 17mm 14mm; }
+  * { box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; font-size: 9.6pt; line-height: 1.36; color: #222222; margin: 0; font-variant-ligatures: none; font-feature-settings: "liga" 0, "clig" 0; }
+  header { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; padding-bottom: 12px; border-bottom: 1px solid #DDDDDD; position: relative; }
+  header::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 56px; height: 3px; background: #1F4E9C; }
+  h1 { font-size: 26pt; font-weight: 700; letter-spacing: -0.5px; margin: 0; color: #111111; line-height: 1.1; }
+  .title { font-size: 13pt; font-weight: 700; color: #1F4E9C; margin-top: 4px; }
+  .tagline { font-size: 9.8pt; color: #444; margin-top: 1px; }
+  .contact { text-align: right; font-size: 8.6pt; color: #6B6B6B; line-height: 1.55; }
+  h2 { display: flex; align-items: center; gap: 8px; font-size: 9pt; font-weight: 700; color: #111111; margin: 15px 0 8px; break-after: avoid; }
+  h2 .n { color: #1F4E9C; }
+  h2::after { content: ""; flex: 1; height: 1px; background: #C9D6EE; margin-left: 6px; }
+  .profile { font-size: 10.2pt; line-height: 1.5; color: #333; }
+  .snap { display: flex; border: 1px solid #C9D6EE; border-radius: 4px; background: #F3F6FC; }
+  .snap div { flex: 1; padding: 7px 12px 6px; }
+  .snap div + div { border-left: 1px solid #C9D6EE; }
+  .snap b { display: block; font-size: 17pt; line-height: 1.1; color: #1F4E9C; }
+  .snap span { font-size: 8.2pt; color: #555; }
+  .krow { padding-left: 150px; text-indent: -150px; margin-bottom: 3px; }
+  .krow .k { display: inline-block; text-indent: 0; width: 150px; font-size: 8pt; font-weight: 700; color: #1F4E9C; }
+  .cards { display: flex; gap: 40px; margin-bottom: 7px; }
+  .cardcol { flex: 1; }
+  .card { border-bottom: 1px solid #DDDDDD; padding-bottom: 4px; }
+  .cardtop { display: flex; justify-content: space-between; color: #111111; }
+  .year { color: #1F4E9C; font-size: 8.6pt; font-weight: 700; }
+  .cardorg { color: #6B6B6B; }
+  /* Roadmap timeline */
+  .timeline { position: relative; padding-left: 20px; }
+  .timeline::before { content: ""; position: absolute; left: 4px; top: 8px; bottom: 10px; width: 1.5px; background: #C9D6EE; }
+  .entry { position: relative; margin-bottom: 11px; }
+  .entry::before { content: ""; position: absolute; left: -20px; top: 5px; width: 7px; height: 7px; border-radius: 50%; border: 1.5px solid #1F4E9C; background: #fff; }
+  .entry.now::before { background: #1F4E9C; }
+  .jobrow { display: flex; justify-content: space-between; align-items: baseline; break-after: avoid; }
+  .role { font-size: 12pt; font-weight: 700; color: #111111; }
+  .org { font-size: 12pt; color: #8A8A8A; }
+  .dates { font-size: 8.4pt; font-weight: 700; color: #1F4E9C; white-space: nowrap; }
+  .sub2 { margin-top: 7px; }
+  .sub { font-weight: 700; color: #555; margin: 2px 0 3px; break-after: avoid; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li:last-child { break-after: avoid; }
+  li { position: relative; padding-left: 14px; margin-bottom: 1.5px; break-inside: avoid; }
+  li::before { content: ""; position: absolute; left: 1px; top: 0.6em; width: 5px; height: 5px; background: #1F4E9C; }
+  b { color: #111111; }
+  .tags { break-before: avoid; margin-top: 5px; display: flex; flex-wrap: wrap; gap: 4px; }
+  .tags span { border: 1px solid #C9D6EE; color: #1F4E9C; border-radius: 3px; padding: 0 7px; font-size: 7.8pt; background: #fff; }
+  .contact a { color: inherit; text-decoration: none; }
+  .dl { display: none; }
+  @media screen {
+    html { background: #EEF1F6; }
+    body { padding: 28px 12px 40px; }
+    .page { max-width: 210mm; margin: 0 auto; background: #fff; padding: 14mm 17mm; border-radius: 6px; box-shadow: 0 4px 24px rgba(20, 40, 80, .10); }
+    .contact a:hover { color: #1F4E9C; text-decoration: underline; }
+    .dl { display: block; max-width: 210mm; margin: 0 auto 12px; text-align: right; }
+    .dl a { display: inline-block; background: #1F4E9C; color: #fff; text-decoration: none; font-size: 9.5pt; font-weight: 700; padding: 7px 14px; border-radius: 4px; }
+  }
+  @media screen and (max-width: 720px) {
+    body { padding: 12px 8px 24px; font-size: 10.5pt; }
+    .page { padding: 22px 18px; }
+    header { flex-direction: column; align-items: flex-start; }
+    .contact { text-align: left; }
+    h1 { font-size: 22pt; }
+    .snap { flex-wrap: wrap; }
+    .snap div { flex: 1 1 45%; }
+    .snap div:nth-child(3) { border-left: 0; }
+    .snap div:nth-child(n+3) { border-top: 1px solid #C9D6EE; }
+    .krow { padding-left: 0; text-indent: 0; margin-bottom: 8px; }
+    .krow .k { display: block; width: auto; }
+    .cards { flex-direction: column; gap: 7px; }
+    .jobrow { flex-direction: column; }
+  }
+</style></head><body>
+  <div class="dl"><a href="./" target="_top" style="background:#fff;color:#1F4E9C;border:1px solid #C9D6EE;margin-right:8px">← Portfolio</a><a href="assets/Thanh_Thu_Katie_Product_Owner_CV.pdf" download>Download PDF</a></div>
+  <div class="page">
+  <header>
+    <div>
+      <h1>Thanh Thu (Katie)</h1>
+      <div class="title">Product Owner</div>
+      <div class="tagline">Complex business rules, turned into clear requirements</div>
+    </div>
+    <div class="contact"><div><a href="https://katiecaooo.github.io">katiecaooo.github.io</a></div><div><a href="mailto:katiecaooo@gmail.com">katiecaooo@gmail.com</a></div><div><a href="https://linkedin.com/in/katiecaooo">linkedin.com/in/katiecaooo</a></div><div><a href="tel:+84988388736">(+84) 988 388 736</a></div><div>Ho Chi Minh City</div></div>
+  </header>
+  <h2><span class="n">01</span><span>PROFILE</span></h2><div class="profile">Product Owner with <b>2.5+ years of product experience</b> at Tiki and Healiverse, backed by a <b>software engineering degree</b>, hands-on <b>SQL</b>, and work as a <b>backend developer and QA tester</b>. I turn complex business rules into clear requirements, user flows and acceptance criteria, and work with developers and QA from planning to release. Delivered <b>vendor and payment API integrations</b>, specified a <b>two-sided B2B marketplace</b>, and use <b>AI tools</b> like Claude Code daily, checking their output carefully.</div>
+  <h2><span class="n">02</span><span>IMPACT SNAPSHOT</span></h2><div class="snap"><div><b>2.5+</b><span>years in product roles</span></div><div><b>3</b><span>vendor APIs integrated</span></div><div><b>100+</b><span>SKUs connected via APIs</span></div><div><b>~40</b><span>screens specified in total</span></div></div>
+  <h2><span class="n">03</span><span>CORE COMPETENCIES</span></h2>
+  <div class="skills"><div class="krow"><span class="k">PRODUCT</span>Requirements &amp; PRDs · User Stories · Acceptance Criteria · Business Rules &amp; Edge Cases · User Flows · Wireframes · Backlog Prioritization · UAT · Release Coordination · Stakeholder &amp; Vendor Management</div><div class="krow"><span class="k">TECHNICAL</span>REST APIs · Vendor &amp; Payment API Integration · <b>SQL</b> (writing queries: JOIN, GROUP BY) · ERD · Black-box Testing · Basic Frontend</div><div class="krow"><span class="k">TOOLS</span>Jira · Confluence · Figma · Amplitude · Postman (basic) · Swagger (basic) · Claude Code · Microsoft Office</div><div class="krow"><span class="k">PROCESS</span>Agile · Scrum · Backlog Refinement · Cross-functional Collaboration · Communication</div><div class="krow"><span class="k">DOMAINS</span>E-commerce · B2B Marketplace · Digital Vouchers &amp; VAS · Event Ticketing · Payments · Fintech</div></div>
+  <h2><span class="n">04</span><span>CERTIFICATIONS</span></h2><div class="cards"><div class="cardcol"><div class="card"><div class="cardtop"><b>Pedagogical Training for Lecturers</b><span class="year">2025</span></div><div class="cardorg">Hanoi Pedagogical University 2</div></div></div><div class="cardcol"><div class="card"><div class="cardtop"><b>IELTS Academic 6.0</b><span class="year">2025</span></div><div class="cardorg">British Council</div></div></div></div><div class="cards"><div class="cardcol"><div class="card"><div class="cardtop"><b>Project Management Specialization</b><span class="year">2020</span></div><div class="cardorg">Coursera – Principles and Practices</div></div></div><div class="cardcol"></div></div><h2><span class="n">05</span><span>EDUCATION</span></h2><div class="cards"><div class="cardcol"><div class="card"><div class="cardtop"><b>Bachelor's Degree, Software Engineering</b><span class="year">2021</span></div><div class="cardorg">FPT University</div></div></div><div class="cardcol"></div></div>
+  <h2><span class="n">06</span><span>PROFESSIONAL EXPERIENCE</span></h2><div class="timeline">
+  <div class="entry now">
+    <div class="jobrow"><div><span class="role">Career Break</span><span class="org"> · Parental leave</span></div><div class="dates">JUL 2025 - PRESENT</div></div>
+    
+    <ul><li>Caring for my newborn full-time, while keeping my skills current with <b>AnimaLife</b> (see Personal Project).</li></ul>
+    
+  </div>
+  <div class="entry">
+    <div class="jobrow"><div><span class="role">Technical Product Owner (Contract)</span><span class="org"> · Healiverse</span></div><div class="dates">JAN 2024 - JUN 2025</div></div>
+    <div class="sub">Healthy Beauty: B2B marketplace for dietary supplements</div>
+    <ul><li>Wrote the product proposal, project plan and end-to-end user journeys for <b>both sides of the marketplace</b>.</li><li>Specified <b>20+ screens and modules</b> – sellers: products, inventory, orders, accounting reconciliation; buyers: catalogue, online ordering and payment, order tracking, health content.</li><li>Defined an <b>AI chatbot</b> for buyers with <b>4 functions</b>: product questions, quick ordering, store finder, and promotions and after-sales support.</li><li>Specified and delivered <b>2 third-party integrations</b> with the dev team: e-invoice issuing and shipping-order creation.</li><li>Led a <b>4-person cross-functional development team</b> (1 BE, 2 FE, 1 QA): backlog refinement, sprints, blockers.</li></ul><div class="sub sub2">Ngoc Trai Dental: dental clinic website</div><ul><li><b>Independently designed and built the frontend</b>: service pages and an <b>online appointment-booking flow</b>.</li><li>Owned the work <b>end to end</b>, from layout to the <b>completed website handed over</b> to the client.</li></ul>
+    <div class="tags"><span>B2B Marketplace</span><span>PRDs</span><span>User Flows</span><span>Acceptance Criteria</span><span>AI Chatbot</span><span>E-invoice</span><span>Shipping</span><span>SQL</span><span>Frontend</span></div>
+  </div>
+  <div class="entry">
+    <div class="jobrow"><div><span class="role">QA Tester (Freelance)</span><span class="org"> · Neutronpay &amp; other clients</span></div><div class="dates">MAR 2023 - DEC 2023</div></div>
+    
+    <ul><li>Tested <b>fintech and crypto products</b> on a contract basis for <b>10 months</b>, including a <b>crypto wallet app</b> and products at <b>Neutronpay</b>.</li><li>Wrote test cases from requirements and ran <b>black-box testing</b> of functionality, reliability and UX.</li><li>Logged defects with clear steps to reproduce, and <b>collaborated with developers</b> to retest fixes until closed.</li><li>Flagged quality gaps and suggested fixes – an <b>eye for edge cases</b> I now use in acceptance criteria.</li></ul>
+    <div class="tags"><span>Black-box Testing</span><span>Test Cases</span><span>Bug Reports</span><span>SQL</span><span>Fintech</span><span>Crypto Wallet</span></div>
+  </div>
+  <div class="entry">
+    <div class="jobrow"><div><span class="role">Associate Product Manager</span><span class="org"> · Tiki</span></div><div class="dates">NOV 2021 - DEC 2022</div></div>
+    <div class="sub">4 product lines: Value-Added Services (VAS), Voucher, TikiVIP &amp; TicketBox, team of 4 to 6</div>
+    <ul><li><b>Owned the VAS product area and roadmap</b>: decisions, prioritization and delivery, reporting to leadership.</li><li>Ran the <b>full product cycle</b> for <b>about 20 VAS screens</b> across <b>3 user types</b> (retail buyers, wholesale buyers, admins): discovery of user needs, PRDs, wireframes, UAT and release.</li><li>Integrated <b>3 vendor APIs covering 100+ SKUs</b>: reviewed vendor API docs, defined workflows, business rules, error handling and fallback cases, and ran API testing and UAT, checking data with <b>SQL</b>.</li><li>Moved digital codes from our database to <b>real-time vendor API retrieval</b>, cutting leaked, mismatched and expired codes; did the same for <b>Vouchers</b>, widening the product range.</li><li><b>Launched a wholesale sales channel</b> for VAS products and expanded vendor partnerships to secure <b>better commission rates</b>.</li><li>TicketBox: took over an acquired event-ticketing platform with <b>no documentation</b>; mapped the system, fixed broken workflows, and coordinated the <b>VNPay payment integration</b>, which raised successful payments and sped up checkout.</li><li>TikiVIP: ran customer demos to gather <b>user feedback</b> on a <b>banking-partner mini app</b>.</li></ul>
+    <div class="tags"><span>Vendor APIs</span><span>VNPay</span><span>PRDs</span><span>User Stories</span><span>Wireframes</span><span>UAT</span><span>SQL</span><span>Jira</span><span>Confluence</span><span>Figma</span><span>Amplitude</span></div>
+  </div>
+  <div class="entry">
+    <div class="jobrow"><div><span class="role">Backend Developer</span><span class="org"> · FPT Software</span></div><div class="dates">JUN 2021 - OCT 2021</div></div>
+    
+    <ul><li>Built <b>RESTful APIs</b> for a statistics website and wrote <b>SQL data-migration queries</b> for ETL on projects for <b>2 global clients, Shiseido and General Electric</b>, in a Scrum team.</li></ul>
+    <div class="tags"><span>RESTful APIs</span><span>SQL</span><span>ETL</span><span>Scrum</span></div>
+  </div>
+  <div class="entry">
+    <div class="jobrow"><div><span class="role">Backend Developer &amp; Business Analyst</span><span class="org"> · FPT University</span></div><div class="dates">JAN 2021 - MAY 2021</div></div>
+    <div class="sub">MAVCA project</div>
+    <ul><li>Gathered and documented requirements; drew <b>ERD, use-case, class, sequence and screen-flow diagrams</b>.</li><li>Built RESTful APIs, helped design the database and architecture, and joined sprint planning and reviews.</li></ul>
+    <div class="tags"><span>Requirements</span><span>ERD</span><span>UML Diagrams</span><span>RESTful APIs</span><span>SQL</span></div>
+  </div></div>
+  <h2><span class="n">07</span><span>PERSONAL PROJECT</span></h2><div class="timeline">
+  <div class="entry now">
+    <div class="jobrow"><div><span class="role">AnimaLife</span><span class="org"> · Personal project</span></div><div class="dates">OCT 2026 - PRESENT</div></div>
+    <div class="sub">Life-simulation web game built with Claude Code</div>
+    <ul><li>Acted as <b>product owner</b>: wrote the product idea, game rules and per-species design docs, then directed an AI coding agent (<b>Claude Code</b>) to build them and reviewed every result.</li><li>Built a working browser game with <b>47 species and 189 breeds</b>, life events, illnesses and explained endings, in <b>3 languages</b> (English, Vietnamese, German).</li><li>Set up checks to <b>verify the AI’s output</b>: a balance simulator, translation checks and browser test pages.</li></ul>
+    <div class="tags"><span>Claude Code</span><span>AI-Assisted Development</span><span>Design Docs</span><span>i18n</span><span>Testing</span></div>
+  </div></div>
+  </div>
+<script>if (window.self !== window.top) { document.querySelector(".dl").style.display = "none"; document.body.style.paddingTop = "16px"; }</script>
+</body></html>
