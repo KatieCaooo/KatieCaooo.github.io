@@ -92,6 +92,31 @@
   .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
   .tags span { background: var(--peach-2); color: var(--accent-ink); border-radius: 999px; padding: 4px 12px; font-size: 13px; font-weight: 700; }
 
+  /* Work samples */
+  .samples { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .sample { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow); }
+  .cover { aspect-ratio: 16/9; display: grid; place-items: center; position: relative; background: var(--peach); color: var(--accent-ink); font-family: Fraunces, serif; font-size: 24px; text-align: center; padding: 16px; }
+  .cover.slides { background: linear-gradient(135deg, #F6E4D8, #FBEFE6); }
+  .cover.slides::after { content: ""; position: absolute; inset: 18% 24% 26%; border: 2px solid rgba(184,85,58,.35); border-radius: 6px; }
+  .cover span { position: relative; z-index: 1; }
+  .cover img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+  .cover .play { position: relative; z-index: 1; width: 58px; height: 58px; border-radius: 50%; background: rgba(184,85,58,.92); display: grid; place-items: center; color: #fff; font-size: 22px; padding-left: 4px; }
+  .badge { position: absolute; top: 12px; left: 12px; z-index: 2; background: #fff; color: var(--accent-ink); font: 700 12px "Nunito Sans", sans-serif; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; }
+  .sample-body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .sample-body h3 { font-size: 20px; }
+  .sample-body p { margin: 0; font-size: 15.5px; color: var(--muted); flex: 1; }
+  .sample-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+  .sample-actions button, .sample-actions a { border: 0; cursor: pointer; font: 700 14px "Nunito Sans", sans-serif; border-radius: 999px; padding: 8px 16px; text-decoration: none; }
+  .sample-actions button { background: var(--accent); color: #fff; }
+  .sample-actions a { background: var(--peach-2); color: var(--accent-ink); }
+  dialog.viewer { width: min(1000px, 94vw); padding: 0; border: 0; border-radius: 18px; background: #1E1A18; box-shadow: 0 20px 60px rgba(0,0,0,.35); }
+  dialog.viewer::backdrop { background: rgba(30, 20, 15, .6); }
+  .viewer-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 14px; color: #F3E9E1; font-weight: 700; }
+  .viewer-bar a { color: #F2A98F; font-size: 14px; margin-left: auto; }
+  .viewer-bar button { border: 0; background: rgba(255,255,255,.12); color: #fff; width: 34px; height: 34px; border-radius: 50%; font-size: 18px; cursor: pointer; }
+  .viewer-frame { aspect-ratio: 16/9; background: #000; }
+  .viewer-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+
   /* Experience */
   .exp { background: var(--surface); }
   .timeline { position: relative; margin-left: 8px; }
@@ -144,7 +169,7 @@
     .photo { order: -1; width: min(280px, 80%); }
     .note { left: auto; right: -12px; bottom: -8px; }
     .numbers { grid-template-columns: repeat(2, 1fr); }
-    .case-grid, .skill-groups, .certs { grid-template-columns: 1fr; }
+    .case-grid, .skill-groups, .certs, .samples { grid-template-columns: 1fr; }
     .case { padding: 26px 22px; }
     section { padding: 64px 0; }
     .contact-card { padding: 40px 22px; }
@@ -163,6 +188,7 @@
     <div class="links">
       <a href="#about" data-i18n="nav.about">About</a>
       <a href="#cases" data-i18n="nav.cases">Case studies</a>
+      <a href="#work" data-i18n="nav.work">Work samples</a>
       <a href="#experience" data-i18n="nav.exp">Experience</a>
       <a href="#animalife">AnimaLife</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
@@ -272,11 +298,51 @@
           <div><h4 data-i18n="lbl.o">The outcome</h4><ul data-i18n="c3.o"><li>Clear specs the team could build from, with acceptance criteria for each feature</li><li>Delivered <b>2 third-party integrations</b>: e-invoices and shipping orders</li></ul></div>
         </div>
         <div class="tags"><span>B2B marketplace</span><span>User journeys</span><span>AI chatbot</span><span>Integrations</span><span>Scrum</span></div>
+        <div class="sample-actions" style="margin-top:16px"><button type="button" data-view="https://docs.google.com/presentation/d/e/2PACX-1vQxxK282hG_Ji_zGGurww750_-xiq-RQUyqbeULfQE0TalLfL_82oU8wQH6h85gUdPlhFyIbNkHxEbz/embed?start=false&amp;loop=false" data-open="https://docs.google.com/presentation/d/e/2PACX-1vQxxK282hG_Ji_zGGurww750_-xiq-RQUyqbeULfQE0TalLfL_82oU8wQH6h85gUdPlhFyIbNkHxEbz/pub" data-title="Healthy Beauty" data-i18n="ws.view">View slides</button></div>
       </article>
 
     </div>
   </div>
 </section>
+
+<section id="work" style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="ws.eye">Work samples</div>
+    <h2 class="sec-title" data-i18n="ws.title">See the <em class="h">real work</em></h2>
+    <p class="sec-lead" data-i18n="ws.lead">Slides and a demo from projects I worked on. They open right here on the page.</p>
+    <div class="samples">
+      <article class="sample">
+        <div class="cover"><img src="https://i.ytimg.com/vi/EGXWYVMAT8A/hqdefault.jpg" alt="" loading="lazy" width="480" height="360"><span class="badge" data-i18n="ws.video">Video demo</span><span class="play">▶</span></div>
+        <div class="sample-body">
+          <h3>Ngoc Trai Dental</h3>
+          <p data-i18n="ws.1">A dental clinic's service and appointment-booking website, built with Healiverse. I designed and built the frontend.</p>
+          <div class="sample-actions"><button type="button" data-view="https://www.youtube.com/embed/EGXWYVMAT8A?autoplay=1" data-open="https://www.youtube.com/watch?v=EGXWYVMAT8A" data-title="Ngoc Trai Dental" data-i18n="ws.watch">Watch demo</button></div>
+        </div>
+      </article>
+      <article class="sample">
+        <div class="cover slides"><span class="badge" data-i18n="ws.slides">Slides</span><span>Healthy Beauty</span></div>
+        <div class="sample-body">
+          <h3>Healthy Beauty</h3>
+          <p data-i18n="ws.2">Project proposal for Healthy Beauty, covering the mobile app, a video series and brand identity (in Vietnamese).</p>
+          <div class="sample-actions"><button type="button" data-view="https://docs.google.com/presentation/d/e/2PACX-1vQxxK282hG_Ji_zGGurww750_-xiq-RQUyqbeULfQE0TalLfL_82oU8wQH6h85gUdPlhFyIbNkHxEbz/embed?start=false&amp;loop=false" data-open="https://docs.google.com/presentation/d/e/2PACX-1vQxxK282hG_Ji_zGGurww750_-xiq-RQUyqbeULfQE0TalLfL_82oU8wQH6h85gUdPlhFyIbNkHxEbz/pub" data-title="Healthy Beauty" data-i18n="ws.view">View slides</button></div>
+        </div>
+      </article>
+      <article class="sample">
+        <div class="cover slides"><span class="badge" data-i18n="ws.slides">Slides</span><span>MAVCA</span></div>
+        <div class="sample-body">
+          <h3>MAVCA</h3>
+          <p data-i18n="ws.3">Presentation of my FPT University project, where I worked as backend developer and business analyst.</p>
+          <div class="sample-actions"><button type="button" data-view="https://docs.google.com/presentation/d/e/2PACX-1vQ2cT3Ra9cK4AAYfLF3dWDrkZt912UluVC5vXmFp9KykbTYNlrBVweXtFWXhLkX0A/embed?start=false&amp;loop=false" data-open="https://docs.google.com/presentation/d/e/2PACX-1vQ2cT3Ra9cK4AAYfLF3dWDrkZt912UluVC5vXmFp9KykbTYNlrBVweXtFWXhLkX0A/pub" data-title="MAVCA" data-i18n="ws.view">View slides</button><a href="https://drive.google.com/file/d/1ag8GhUxThJUYYiitYx1CIHvyU242U6yV/view" target="_blank" rel="noopener" data-i18n="ws.doc">Summary document</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<dialog class="viewer" id="viewer">
+  <div class="viewer-bar"><span id="viewer-title"></span><a id="viewer-open" href="#" target="_blank" rel="noopener" data-i18n="ws.newtab">Open in new tab</a><button type="button" id="viewer-close" aria-label="Close">×</button></div>
+  <div class="viewer-frame"><iframe id="viewer-frame" title="Work sample" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe></div>
+</dialog>
 
 <section class="exp" id="experience">
   <div class="wrap">
@@ -388,6 +454,12 @@
     "c3.p": "Một sàn mới cần phục vụ <b>hai nhóm người dùng rất khác nhau</b>: người bán quản lý sản phẩm, tồn kho, đơn hàng và hóa đơn; người mua cần được tư vấn trước khi đặt hàng.",
     "c3.d": "<li>Nghiên cứu các nền tảng nhà thuốc trực tuyến đối thủ</li><li>Viết đề xuất, kế hoạch và hành trình người dùng cho cả hai phía</li><li>Đặc tả <b>hơn 20 màn hình và module</b>, cùng một <b>AI chatbot</b> với 4 chức năng</li><li>Dẫn dắt <b>đội 4 người đa chức năng</b> và trình bày tiến độ với đối tác</li>",
     "c3.o": "<li>Tài liệu đặc tả rõ ràng để đội phát triển, kèm tiêu chí nghiệm thu cho từng tính năng</li><li>Hoàn thành <b>2 tích hợp bên thứ ba</b>: hóa đơn điện tử và tạo đơn vận chuyển</li>",
+    "nav.work": "Sản phẩm mẫu", "ws.eye": "Sản phẩm mẫu", "ws.title": "Xem <em class=\"h\">sản phẩm thật</em>",
+    "ws.lead": "Slide và video demo từ các dự án mình đã làm. Bấm để xem ngay trên trang.",
+    "ws.video": "Video demo", "ws.slides": "Slide", "ws.watch": "Xem demo", "ws.view": "Xem slide", "ws.doc": "Tài liệu tóm tắt", "ws.newtab": "Mở trong tab mới",
+    "ws.1": "Website giới thiệu dịch vụ và đặt lịch hẹn cho một phòng khám nha khoa, thực hiện cùng Healiverse. Mình thiết kế và xây dựng phần frontend.",
+    "ws.2": "Đề xuất dự án cho Healthy Beauty, gồm ứng dụng di động, chuỗi video và nhận diện thương hiệu.",
+    "ws.3": "Bài thuyết trình dự án tại Đại học FPT, nơi mình làm backend developer và business analyst.",
     "exp.eye": "Kinh nghiệm", "exp.title": "Chặng đường <em class=\"h\">của mình</em>", "exp.lead": "Phiên bản ngắn gọn. Chi tiết đầy đủ có trong CV.",
     "e0.r": "Tạm nghỉ", "e0.o": "· Nghỉ chăm con", "e0.d": "07/2025 – Hiện tại", "e0.x": "Chăm con nhỏ và xây dựng AnimaLife bằng Claude Code để giữ vững kỹ năng làm sản phẩm.",
     "e1.d": "01/2024 – 06/2025", "e1.x": "Sàn B2B hai phía cho thực phẩm chức năng: hơn 20 màn hình, AI chatbot, tích hợp hóa đơn điện tử và vận chuyển. Ngoài ra còn xây dựng frontend cho website đặt lịch của một phòng khám nha khoa.",
@@ -418,6 +490,20 @@
   document.querySelectorAll(".lang button").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.lang)));
   let saved = null; try { saved = localStorage.getItem("lang"); } catch (e) {}
   if (saved === "vi") setLang("vi");
+
+  // Work samples viewer: loads the slides or video only when opened
+  const viewer = document.getElementById("viewer"), frame = document.getElementById("viewer-frame");
+  document.querySelectorAll("[data-view]").forEach((b) => b.addEventListener("click", () => {
+    if (!viewer.showModal) { window.open(b.dataset.open, "_blank", "noopener"); return; }
+    document.getElementById("viewer-title").textContent = b.dataset.title;
+    document.getElementById("viewer-open").href = b.dataset.open;
+    frame.src = b.dataset.view;
+    viewer.showModal();
+  }));
+  const closeViewer = () => { viewer.close(); };
+  document.getElementById("viewer-close").addEventListener("click", closeViewer);
+  viewer.addEventListener("click", (e) => { if (e.target === viewer) closeViewer(); });
+  viewer.addEventListener("close", () => { frame.src = "about:blank"; });
 </script>
 </body>
 </html>
