@@ -1,985 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Katie Cao - Product Manager</title>
-      <link rel="icon" type="image/png" href="letter-k.png">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-      <style>
-         /* @font-face {
-         font-family: 'Italianno';
-         src: url('./docs/assets/fonts/Italianno-Regular.ttf') format('truetype');
-         } */
-         /* Theme Colors */
-         .theme-default {
-         --primary: #2B6CB0;;
-         --accent: #1e8feb;
-         --accent-light: #cbecfb;
-         --text: #2C5282;
-         --background: #FFFFFF;
-         }
-         .theme-nature {
-         --primary: #2F855A;
-         --accent: #53a874;
-         --accent-light: #F0FFF4;
-         --text: #276749;
-         --background: #FFFFFF;
-         }
-         .theme-sunset {
-         --primary: #B82132;
-         --accent: #D2665A;
-         --accent-light: #FFFAF0;
-         --text: #744210;
-         --background: #FFFFFF;
-         }
-         .theme-dark {
-         --primary: #ffffff;
-         --accent: #ffffff;
-         --accent-light: #000000;
-         --text: #ffffff;
-         --background: #212529;
-         }
-         /* Theme Switcher */
-         .theme-switcher {
-         position: fixed;
-         top: 20px;
-         right: 20px;
-         z-index: 1000;
-         background: var(--background);
-         padding: 10px;
-         border-radius: 8px;
-         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-         display: flex;
-         flex-wrap: wrap;
-         gap: 5px;
-         max-width: 90px;
-         }
-         .theme-btn {
-         width: 30px;
-         height: 30px;
-         border-radius: 50%;
-         border: 2px solid #fff;
-         margin: 0;
-         cursor: pointer;
-         transition: transform 0.3s;
-         flex: 0 0 auto;
-         }
-         .theme-btn:hover {
-         transform: scale(1.2);
-         }
-         .theme-btn.default {
-         background: #2B6CB0;
-         }
-         .theme-btn.nature {
-         background: #2F855A;
-         }
-         .theme-btn.sunset {
-         background: #C53030;
-         }
-         .theme-btn.dark {
-         background: #212529;
-         }
-         * {
-         margin: 0;
-         padding: 0;
-         box-sizing: border-box;
-         scroll-behavior: smooth;
-         }
-         body {
-         font-family: 'Montserrat', sans-serif;
-         line-height: 1.6;
-         color: var(--text);
-         background-color: var(--background);
-         overflow-x: hidden;
-         transition: all 0.3s ease;
-         font-size: 16px;
-         }
-         /* Navigation */
-         .nav {
-         position: fixed;
-         right: clamp(0.5rem, 2vw, 2rem);
-         top: 50%;
-         transform: translateY(-50%);
-         z-index: 100;
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         gap: clamp(0.5rem, 1vw, 1rem);
-         }
-         .nav-dot {
-         width: clamp(24px, 3vw, 30px);
-         height: clamp(24px, 3vw, 30px);
-         background: var(--accent);
-         border-radius: 50%;
-         cursor: pointer;
-         transition: transform 0.3s;
-         opacity: 0.5;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         color: white;
-         }
-         .nav-arrow {
-         width: clamp(24px, 3vw, 30px);
-         height: clamp(24px, 3vw, 30px);
-         background: var(--accent);
-         border-radius: 50%;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         cursor: pointer;
-         transition: transform 0.3s;
-         color: white;
-         }
-         .nav-arrow:hover,
-         .nav-dot:hover {
-         transform: scale(1.5);
-         opacity: 1;
-         }
-         .nav-dot.active {
-         opacity: 1;
-         transform: scale(1.5);
-         }
-         /* Section Styling */
-         section {
-         min-height: 100vh;
-         width: 100%;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         padding: clamp(2rem, 4vw, 4rem) clamp(1rem, 2vw, 2rem);
-         position: relative;
-         }
-         .container {
-         max-width: min(1200px, 90vw);
-         width: 100%;
-         margin: 0 auto;
-         padding: clamp(1rem, 2vw, 2rem);
-         }
-         /* Profile Section */
-         .profile-grid {
-         display: grid;
-         grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-         gap: clamp(2rem, 4vw, 4rem);
-         align-items: center;
-         }
-         .profile-image {
-         width: min(300px, 100%);
-         height: min(450px, 60vh);
-         border-radius: 16px;
-         border: 4px solid var(--accent);
-         overflow: hidden;
-         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-         margin: 0 auto;
-         }
-         .profile-image img {
-         width: 100%;
-         height: 100%;
-         object-fit: cover;
-         }
-         .profile-content {
-         text-align: left;
-         }
-         h1 {
-         font-family: 'Montserrat', sans-serif;
-         font-size: clamp(2rem, 5vw, 3.5rem);
-         margin-bottom: 1rem;
-         letter-spacing: -0.05em;
-         color: var(--primary);
-         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-         }
-         .title {
-         font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-         margin-bottom: 1.5rem;
-         color: var(--accent);
-         }
-         .summary {
-         font-size: clamp(1rem, 1.5vw, 1.2rem);
-         color: var(--text);
-         }
-         /* Contact Section */
-         .contact-grid {
-         display: grid;
-         grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-         max-width: 100%;
-         gap: clamp(1.5rem, 3vw, 3rem);
-         align-items: center;
-         height: 100%;
-         @media (min-width: 768px) {
-         grid-template-columns: repeat(3, 1fr);
-         }
-         }
-         .contact-item {
-         text-align: center;
-         padding: clamp(1rem, 2vw, 2rem);
-         transition: all 0.3s ease;
-         border-radius: 12px;
-         background: var(--background);
-         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-         }
-         .contact-item:hover {
-         transform: translateY(-10px);
-         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-         }
-         .contact-item i {
-         font-size: clamp(1.8rem, 3vw, 2.5rem);
-         color: var(--accent);
-         margin-bottom: 1rem;
-         }
-         .contact-item a {
-         color: var(--text);
-         text-decoration: none;
-         font-size: clamp(1rem, 1.5vw, 1.2rem);
-         transition: color 0.3s;
-         word-break: break-word;
-         }
-         .contact-item a:hover {
-         color: var(--accent);
-         }
-         /* Section Headers */
-         h2 {
-         font-size: clamp(1.8rem, 3vw, 2.5rem);
-         color: var(--primary);
-         margin-bottom: clamp(2rem, 3vw, 3rem);
-         text-align: center;
-         position: relative;
-         text-transform: uppercase;
-         letter-spacing: 1px;
-         }
-         h2::after {
-         content: '';
-         position: absolute;
-         bottom: -1rem;
-         left: 50%;
-         transform: translateX(-50%);
-         width: min(100px, 30%);
-         height: 4px;
-         background: var(--accent);
-         border-radius: 2px;
-         }
-         /* Experience Section */
-         .experience-grid {
-         display: grid;
-         gap: clamp(2rem, 3vw, 3rem);
-         }
-         .experience-item {
-         display: grid;
-         grid-template-columns: 1fr 2fr;
-         gap: clamp(1rem, 2vw, 2rem);
-         padding: clamp(1.5rem, 2.5vw, 2.5rem);
-         background: var(--background);
-         border-radius: 16px;
-         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-         transition: all 0.3s ease;
-         position: relative;
-         overflow: hidden;
-         }
-         .experience-item::before {
-         content: '';
-         position: absolute;
-         left: 0;
-         top: 0;
-         height: 100%;
-         width: 4px;
-         background: var(--accent);
-         opacity: 0;
-         transition: opacity 0.3s ease;
-         }
-         .experience-item:hover {
-         transform: translateY(-5px);
-         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-         }
-         .experience-item:hover::before {
-         opacity: 1;
-         }
-         .experience-meta {
-         padding-right: clamp(1rem, 2vw, 2rem);
-         border-right: 2px solid var(--background);
-         }
-         section:nth-child(odd) .experience-meta {
-         border-right: 2px solid var(--accent-light);
-         }
-         .experience-meta .company {
-         font-size: clamp(1.1rem, 1.5vw, 1.25rem);
-         font-weight: 600;
-         color: var(--primary);
-         margin-bottom: 0.5rem;
-         }
-         .experience-meta .period {
-         font-size: clamp(0.9rem, 1.2vw, 0.95rem);
-         color: var(--text);
-         }
-         .experience-content .role {
-         font-size: clamp(1.1rem, 1.5vw, 1.25rem);
-         font-weight: 600;
-         color: var(--accent);
-         margin-bottom: 1rem;
-         }
-         .experience-content ul {
-         list-style-type: none;
-         }
-         .experience-content ul li {
-         position: relative;
-         padding-left: 1.5rem;
-         margin-bottom: 0.75rem;
-         line-height: 1.6;
-         font-size: clamp(0.9rem, 1.2vw, 1rem);
-         }
-         .experience-content ul li::before {
-         content: '•';
-         color: var(--accent);
-         position: absolute;
-         left: 0;
-         font-weight: bold;
-         }
-         .experience-content ul ul {
-         margin-top: 0.75rem;
-         margin-left: 1rem;
-         }
-         /* Skills Section */
-         .skills-grid {
-         display: grid;
-         grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-         gap: clamp(1.5rem, 2vw, 2rem);
-         }
-         .skill-category {
-         background: var(--background);
-         padding: clamp(1.5rem, 2vw, 2rem);
-         border-radius: 16px;
-         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-         transition: transform 0.3s;
-         }
-         .skill-category:hover {
-         transform: translateY(-5px);
-         }
-         /* Core Achievements Section */
-         .core-achievements {
-         display: grid;
-         grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-         gap: clamp(1.5rem, 2vw, 2rem);
-         padding: clamp(1.5rem, 2vw, 2rem);
-         }
-         .achievement-card {
-         background: var(--background);
-         padding: clamp(1.5rem, 2vw, 2rem);
-         border-radius: 16px;
-         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-         transition: transform 0.3s;
-         }
-         .achievement-card:hover {
-         transform: translateY(-5px);
-         }
-         .achievement-card h3 {
-         color: var(--accent);
-         margin-bottom: 1rem;
-         font-size: clamp(1.1rem, 1.5vw, 1.3rem);
-         }
-         /* Responsive Design */
-         @media (max-width: 768px) {
-         .nav {
-         display: none;
-         }
-         .experience-item {
-         grid-template-columns: 1fr;
-         }
-         .experience-meta {
-         border-right: none;
-         border-bottom: 2px solid var(--accent-light);
-         padding-bottom: 1rem;
-         margin-bottom: 1rem;
-         }
-         section:nth-child(even) .experience-meta {
-         border-right: none;
-         border-bottom: 2px solid var(--background);
-         padding-bottom: 1rem;
-         margin-bottom: 1rem;
-         }
-         section:nth-child(odd) .experience-meta {
-         border-right: none;
-         border-bottom: 2px solid var(--accent-light);
-         padding-bottom: 1rem;
-         margin-bottom: 1rem;
-         }
-         .theme-switcher {
-         top: auto;
-         bottom: 20px;
-         right: 20px;
-         }
-         .profile-content {
-         text-align: center;
-         }
-         }
-         /* Scroll Animation */
-         .fade-in {
-         opacity: 0;
-         transform: translateY(20px);
-         transition: opacity 0.6s, transform 0.6s;
-         }
-         .fade-in.visible {
-         opacity: 1;
-         transform: translateY(0);
-         }
-         /* Section-specific styles */
-         section:nth-child(even) {
-         background-color: var(--background);
-         }
-         section:nth-child(odd) {
-         background-color: var(--accent-light);
-         }
-         section:nth-child(even) *[class$="-item"] {
-         background-color: var(--accent-light);
-         }
-         section:nth-child(odd) *[class$="-item"] {
-         background-color: var(--background);
-         }
-         /* Footer styles */
-         footer {
-         background-color: var(--primary);
-         color: var(--background);
-         text-align: center;
-         padding: clamp(1.5rem, 2vw, 2rem);
-         }
-         footer p {
-         margin: 0.5rem 0;
-         font-size: clamp(0.9rem, 1.2vw, 1rem);
-         }
-         footer a {
-         color: var(--accent-light);
-         text-decoration: none;
-         }
-         footer a:hover {
-         text-decoration: underline;
-         }
-         /* Additional responsive adjustments */
-         @media (max-width: 480px) {
-         .container {
-         padding: 0.5rem;
-         }
-         section {
-         padding: 1rem 0.5rem;
-         }
-         .experience-item {
-         padding: 1rem;
-         }
-         .contact-item {
-         padding: 1rem;
-         }
-         }
-         @media (min-width: 2000px) {
-         html {
-         font-size: 18px;
-         }
-         }
-         @media (min-width: 2500px) {
-         html {
-         font-size: 20px;
-         }
-         }
-         /* Print styles */
-         @media print {
-         .nav,
-         .theme-switcher {
-         display: none;
-         }
-         section {
-         min-height: auto;
-         page-break-inside: avoid;
-         }
-         .container {
-         max-width: 100%;
-         }
-         }
-      </style>
-      <script>
-         // Theme Switcher
-          // Navigation functions
-          var currentSection = 'profile';
-          document.addEventListener('DOMContentLoaded', function () {
-              // Add theme switcher HTML
-              const themeSwitcher = document.createElement('div');
-              themeSwitcher.className = 'theme-switcher';
-              themeSwitcher.innerHTML = `
-                  <button class="theme-btn default" onclick="changeTheme('default')" title="Default Theme"></button>
-                  <button class="theme-btn nature" onclick="changeTheme('nature')" title="Nature Theme"></button><br/>
-                  <button class="theme-btn sunset" onclick="changeTheme('sunset')" title="Sunset Theme"></button>
-                  <button class="theme-btn dark" onclick="changeTheme('dark')" title="Dark Theme"></button>
-              `;
-              document.body.appendChild(themeSwitcher);
-          
-              // Set default theme
-              document.body.classList.add('theme-default');
-          
-              // Intersection Observer for fade-in animations
-              const observer = new IntersectionObserver((entries) => {
-                  entries.forEach(entry => {
-                      if (entry.isIntersecting) {
-                          entry.target.classList.add('visible');
-                      }
-                  });
-              }, { threshold: 0.1 });
-          
-              document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
-          
-              // Update nav dots based on scroll position
-              const sections = document.querySelectorAll('section');
-              const navDots = document.querySelectorAll('.nav-dot');
-          
-              window.addEventListener('scroll', () => {
-                  let current = '';
-                  sections.forEach((section) => {
-                      const sectionTop = section.offsetTop;
-                      const sectionHeight = section.clientHeight;
-                      if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                          current = section.getAttribute('id');
-                      }
-                  });
-          
-                  navDots.forEach((dot) => {
-                      dot.classList.remove('active');
-                      if (dot.getAttribute('onclick').includes(current)) {
-                          dot.classList.add('active');
-                          currentSection = current;
-                      }
-                  });
-              });
-          });
-          
-          // Theme change function
-          function changeTheme(theme) {
-              document.body.className = '';
-              document.body.classList.add(`theme-${theme}`);
-              localStorage.setItem('theme', theme);
-          }
-          
-          // Load saved theme
-          window.addEventListener('DOMContentLoaded', (event) => {
-              const savedTheme = localStorage.getItem('theme');
-              if (savedTheme && document) {
-                  document.body.classList.add(`theme-${savedTheme}`);
-              }
-          });
-          
-          // Load currentSection from localStorage on page load
-          window.addEventListener('DOMContentLoaded', (event) => {
-              currentSection = localStorage.getItem('currentSection') || 'profile'; // Load currentSection from localStorage or default to 'profile'
-              gotoSection(currentSection);
-          });
-          
-          function navigateSection(direction) {
-              const sections = ['profile', 'contact', 'education', 'experience', 'portfolios','achievements', 'skills'];
-              const currentIndex = sections.indexOf(currentSection);
-              const nextIndex = direction === 'up' ? (currentIndex - 1 + sections.length) % sections.length : (currentIndex + 1) % sections.length;
-              gotoSection(sections[nextIndex]);
-          }
-          
-          function gotoSection(section) {
-              currentSection = section; // Update currentSection to the new section
-              localStorage.setItem('currentSection', section); // Save currentSection to localStorage
-              document.getElementById(section).scrollIntoView({ behavior: 'smooth' });
-          }
-      </script>
-   </head>
-   <body>
-      <nav class="nav">
-         <div class="nav-arrow" onclick="navigateSection('up')" title="Previous Section">
-            <i class="fas fa-angle-up" title="Previous Section"></i>
-         </div>
-         <div class="nav-dot" onclick="gotoSection('profile')">
-            <i class="fas fa-user" title="Profile"></i>
-         </div>
-         <div class="nav-dot" onclick="gotoSection('contact')">
-            <i class="fas fa-address-card" title="Contact Information"></i>
-         </div>
-         <div class="nav-dot" onclick="gotoSection('education')">
-            <i class="fas fa-graduation-cap" title="Education & Certifications"></i>
-         </div>
-         <div class="nav-dot" onclick="gotoSection('experience')">
-            <i class="fas fa-suitcase" title="Professional Experience"></i>
-         </div>
-         <div class="nav-dot" onclick="gotoSection('portfolios')">
-            <i class="fas fa-folder-open" title="Portfolios"></i>
-         </div>
-         <div class="nav-dot" onclick="gotoSection('achievements')">
-            <i class="fas fa-trophy" title="Core Achievements"></i>
-         </div>
-         <div class="nav-dot" onclick="gotoSection('skills')">
-            <i class="fas fa-gear" title="Skills"></i>
-         </div>
-         <div class="nav-arrow" onclick="navigateSection('down')" title="Next Section">
-            <i class="fas fa-angle-down" title="Next Section"></i>
-         </div>
-      </nav>
-      <section id="profile" class="profile-section">
-         <div class="container fade-in">
-            <div class="profile-grid">
-               <div class="profile-image">
-                  <img src="./docs/assets/profile.jpg" alt="Katie Cao" />
-               </div>
-               <div class="profile-content">
-                  <h1>Hi, I'm Katie Cao</h1>
-                  <div class="title">Product Manager</div>
-                  <div class="summary"> My Vietnamese name is <b>Cao Thanh Thu</b>
-                     <br/>I'm a Product Manager with a background in <b>backend development</b> and <b>product management</b>. I graduated from FPT University and have over three years of experience, including roles in <b>quality assurance</b>. I specialize
-                     in bridging technical and business needs to deliver high-quality, user-focused products. Explore my portfolio to learn more!
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <section id="contact">
-         <div class="container fade-in">
-            <h2>
-               <i class="fas fa-address-card"></i> Contact Information
-            </h2>
-            <div class="contact-grid">
-               <div class="contact-item">
-                  <a href="mailto:katiecaooo@gmail.com">
-                     <i class="fas fa-envelope"></i>
-                     <div>Let’s Work Together</div>
-                  </a>
-               </div>
-               <div class="contact-item">
-                  <i class="fas fa-phone"></i>
-                  <a href="tel:+84988388736">
-                     <div>Let’s Talk</div>
-                  </a>
-               </div>
-               <div class="contact-item">
-                  <a href="https://www.linkedin.com/in/katiecaooo">
-                     <i class="fab fa-linkedin"></i>
-                     <div>
-                        View my Linkedin
-                     </div>
-                  </a>
-               </div>
-               <div class="contact-item">
-                  <a href="https://wa.me/84988388736">
-                     <i class="fa-brands fa-whatsapp"></i>
-                     <div>
-                        Whatsapp me
-                     </div>
-                  </a>
-               </div>
-               <div class="contact-item">
-                  <a href="http://t.me/katiecaooo">
-                     <i class="fa-brands fa-telegram"></i>
-                     <div>Text me on Telegram</div>
-                  </a>
-               </div>
-               <div class="contact-item">
-                  <a href="imessage://katiecaooo@gmail.com">
-                     <i class="fa-regular fa-message"></i>
-                     <div>Message me on iMessage</div>
-                  </a>
-               </div>
-            </div>
-         </div>
-      </section>
-      <section id="education">
-         <div class="container fade-in">
-            <h2>
-               <i class="fas fa-graduation-cap"></i> Education & Certifications
-            </h2>
-            <div class="experience-grid">
-               <div class="experience-item">
-                  <div class="experience-meta">
-                     <div class="company">Education</div>
-                  </div>
-                  <div class="experience-content">
-                     <div class="role">Bachelor of Software Engineering</div>
-                     <b>FPT University - Ho Chi Minh </b>| 2021
-                     <ul class="achievements">
-                        <li>One of Vietnam's leading private universities, renowned for its focus on technology, innovation, and industry-oriented training.</li>
-                        <li>Emphasizes hands-on learning, global integration, and professional development.</li>
-                        <li>Graduates are equipped with strong technical foundations and practical skills to thrive in competitive industries.</li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="experience-item">
-                  <div class="experience-meta">
-                     <div class="company">Certifications</div>
-                  </div>
-                  <div class="experience-content">
-                     <ul class="achievements">
-                        <div class="role">Languages</div>
-                        <li>
-                           <b>IELTS Academic 6.0 Overall</b>
-                           <br />by British Council | Jan 2025
-                           <br />(L:5.5 | R: 6.0 | W:7.0 | S:5.5)
-                        </li>
-                        <li>
-                           <b>B2 UPPER INTERMEDIATE</b>
-                           <br />by EF International Language Campuses | Sep 2023
-                           <br /> Credential ID: <a href="https://cert.efset.org/BDdSFQ" target="_blank"><i class="fas fa-link"></i> BDdSFQ </a>
-                        </li>
-                        <li>
-                           <b>VIETNAMESE - NATIVE</b>
-                        </li>
-                        <div class="role">Management</div>
-                        <li>
-                           <b>Project Management Principles and Practices Specialization</b>
-                           <br />by Coursera | Jun 2020
-                           <br /> Credential ID: <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/FWSJNSVNXLXH" target="_blank"><i class="fas fa-link"></i> FWSJNSVNXLXH </a>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <section id="experience">
-         <div class="container fade-in">
-            <h2>
-               <i class="fas fa-suitcase"></i> Professional Experience
-            </h2>
-            <div class="experience-grid">
-               <div class="experience-item">
-                  <div class="experience-meta">
-                     <div class="company">HEALIVERSE</div>
-                     <div class="period">Sep 2024 – Now | HCMC, Vietnam</div>
-                  </div>
-                  <div class="experience-content">
-                     <div class="role">Technical Product Owner @Healthy Beauty</div>
-                     <ul class="achievements">
-                        <b>Online Pharmacy Platform</b>
-                        <li><b>Market Research & Analysis:</b> Conducted in-depth research and competitor analysis of existing online pharmacy platforms to identify market gaps and opportunities.</li>
-                        <li><b>UI/UX Design:</b> Created detailed UI/UX sketches for the mobile application, outlining user flows and features to enhance user experience and ensure ease of use.</li>
-                        <li><b>Admin Management Web Development:</b> Designed and oversaw the development of an admin management web application, including modules for inventory management, order tracking, and invoice processing.</li>
-                        <li><b>Requirement Documentation:</b> Defined and documented detailed functional requirements for both mobile and web platforms, aligning with business objectives and stakeholder expectations.</li>
-                        <li><b>Stakeholder Communication:</b> Delivered project presentations to partners, showcasing key features, technical solutions, and business value to secure buy-in and feedback.</li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="experience-item">
-                  <div class="experience-meta">
-                     <div class="company">Freelance</div>
-                     <div class="period">March 2023 – Sep 2024 | HCMC, Vietnam</div>
-                  </div>
-                  <div class="experience-content">
-                     <div class="role">Quality Assurance</div>
-                     <ul class="achievements">
-                        <li>
-                           <b>Crypto Wallet Testing:</b> Conducted comprehensive testing for a crypto wallet app, validating functionality, security, and user experience to ensure a reliable and secure product.
-                        </li>
-                        <li>
-                           <b>Testing and Quality Assurance:</b>
-                           <ul>
-                              <li>Executed detailed testing procedures to validate the functionality, reliability, and performance of software features.</li>
-                              <li>Monitored call recordings and provided real-time feedback to agents, ensuring high-quality customer interactions and compliance with company standards.</li>
-                              <li>Conducted quality scoring of agent calls, identifying areas for improvement, recognizing top performance, and proposing actionable solutions to enhance overall efficiency.</li>
-                           </ul>
-                        </li>
-                        <li>
-                           <b>Quality Control:</b>
-                           <ul>
-                              <li>Detected and documented instances of non-compliance and worked with teams to address and resolve issues effectively.</li>
-                              <li>Suggested process improvements to enhance call quality, customer satisfaction, and overall operational success.</li>
-                           </ul>
-                        </li>
-                     </ul>
-                     <div class="role">Product Owner</div>
-                     <ul class="achievements">
-                        <li>
-                           <b>Consulted and Analyzed Features:</b> Collaborated with stakeholders to identify and evaluate necessary features for various projects, ensuring alignment with business goals.
-                        </li>
-                        <li>
-                           <b>Guided Students:</b> Mentored and guided students in completing graduation projects, providing technical and strategic support throughout the process.
-                        </li>
-                        <li>
-                           <b>Documentation:</b> Documented key project milestones, delivering comprehensive and insightful reports to stakeholders to track progress and drive decisions.
-                        </li>
-                        <li>
-                           <b>Scrum Facilitation:</b> Organized and facilitated Scrum ceremonies, fostering team collaboration and ensuring adherence to Agile practices.
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="experience-item">
-                  <div class="experience-meta">
-                     <div class="company">Tiki Company Ltd.</div>
-                     <div class="period">Nov 2021 – Dec 2022 | HCMC, Vietnam</div>
-                  </div>
-                  <div class="experience-content">
-                     <div class="role">Associate Product Manager @TicketBox | VAS | TikiVIP</div>
-                     <ul class="achievements">
-                        <li>Led cross-functional team to improve stakeholder communication and successfully oversaw product development from inception to implementation, resulting in a 20% increase in efficiency.</li>
-                        <li>Developed and maintained the solution vision and roadmap throughout the project's life cycle.</li>
-                        <li>Learned and integrated partner APIs into products, authoring API documentation that streamlined partner integrations and reduced onboarding time by 30%.</li>
-                        <li>Managed all stages of the product development lifecycle, including analysis, design, building, testing, and sharing access.</li>
-                        <li>Proactively followed and tested product features continuously from start to finish, identifying root causes of bugs and collaborating with development teams to resolve them.</li>
-                        <li>Authored detailed test case documentation to streamline testing processes and reduce overall testing time, ensuring product quality and faster delivery cycles.</li>
-                        <li>
-                           Managed product development deliverables and planning, including:
-                           <ul>
-                              <li> Successfully delivered over 10 product requirement documents (PRDs), prepared feature specifications, wireframes, and mock-ups, assessed feature feasibility, and finalized solutions with technical and design teams.
-                              </li>
-                              <li>Defining and communicating release plans to stakeholders and effectively managing and prioritizing product backlogs.</li>
-                           </ul>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="experience-item">
-                  <div class="experience-meta">
-                     <div class="company">FPT Software Company Ltd.</div>
-                     <div class="period">Jun 2021 – Oct 2021 | HCMC, Vietnam</div>
-                  </div>
-                  <div class="experience-content">
-                     <div class="role">Backend Developer @Shiseido | General Electric</div>
-                     <ul class="achievements">
-                        <li>Developed Restful APIs of web services for the statistical website that ensures system performance.</li>
-                        <li>Wrote data migration queries for ETL processes.</li>
-                        <li>Implemented Agile development process using Scrum framework, resulting in a 10% increase in team productivity.</li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="experience-item">
-                  <div class="experience-meta">
-                     <div class="company">FPT University</div>
-                     <div class="period">Jan 2021 – May 2021 | HCMC, Vietnam</div>
-                  </div>
-                  <div class="experience-content">
-                     <div class="role">Backend Developer & Business Analyst @MAVCA</div>
-                     <ul class="achievements">
-                        <li>Implemented Restful APIs, and designed database and architecture.</li>
-                        <li>Reviewed and documented software requirements specifications.</li>
-                        <li>Drew ERD, class diagrams, use case diagrams, sequence diagrams, screen flow...</li>
-                        <li>Implemented Agile Scrum methodology to increase team productivity and reduce time-to-market.</li>
-                        <li>Listed product backlog, planned sprint, reviewed sprint.</li>
-                        <li>Identified and documented problems for improvement, resulting in a 20% increase in efficiency for the next sprints.</li>
-                        <li>Wrote the reports and the meeting minutes.</li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-      <section id="portfolios">
-         <div class="container fade-in">
-         <h2>
-            <i class="fas fa-folder-open"></i> Portfolios
-         </h2>
-         <div class="experience-grid">
-            <div class="experience-item">
-               <div class="experience-meta">
-                  <div class="company">HEALIVERSE</div>
-                  <div class="period">Sep 2024 – Now | HCMC, Vietnam</div>
-               </div>
-               <div class="experience-content">
-                  <div class="role">Technical Product Owner @Ngoc Trai Dental</div>
-                  <ul class="achievements">
-                  <iframe width="100%" height="480" src="https://www.youtube.com/embed/EGXWYVMAT8A?si=CEMqOd89AhAottsQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></ul>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thanh Thu (Katie) · Product Owner</title>
+<meta name="description" content="Thanh Thu (Katie) – Product Owner in Ho Chi Minh City. I turn complex business rules into clear requirements, and work with developers from planning to release.">
+<link rel="icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBF6EF; --surface: #FFFFFF; --ink: #2A2522; --body: #4A403A; --muted: #7A6D64;
+    --accent: #B8553A; --accent-ink: #9A4129; --peach: #F6E4D8; --peach-2: #FBEFE6; --line: #EADFD4;
+    --radius: 18px; --shadow: 0 10px 30px rgba(90, 50, 30, .08);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  body { margin: 0; background: var(--bg); color: var(--body); font: 400 17px/1.65 "Nunito Sans", system-ui, sans-serif; }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: var(--accent-ink); }
+  h1, h2, h3 { font-family: Fraunces, Georgia, serif; color: var(--ink); font-weight: 600; line-height: 1.15; margin: 0; }
+  em.h { font-style: italic; color: var(--accent); font-weight: 500; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 88px 0; }
+  .eyebrow { font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .sec-title { font-size: clamp(30px, 4vw, 42px); margin-bottom: 14px; }
+  .sec-lead { max-width: 640px; color: var(--muted); margin: 0 0 40px; }
+  b { color: var(--ink); font-weight: 700; }
 
-                  <div class="role">Technical Product Owner @NGO Project</div>
-                  <ul class="achievements">
-                  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSfJSCrKjoIg_n7YtzUvSWZzWxq4Aqa9mmhchRcqOpf7mN7PsOd1Bi0XGMhQC3rARVT5Rsr5zO7n5Kr/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="480" allowfullscreen="true" mozallowfullscreen="true"
-                     webkitallowfullscreen="true"></iframe></ul>
+  /* Nav */
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(251, 246, 239, .9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; gap: 22px; height: 64px; }
+  .brand { font-family: Fraunces, serif; font-size: 22px; font-weight: 600; color: var(--ink); text-decoration: none; margin-right: auto; }
+  .brand span { color: var(--accent); }
+  .links { display: flex; gap: 22px; }
+  .links a { color: var(--body); text-decoration: none; font-weight: 600; font-size: 15px; }
+  .links a:hover { color: var(--accent); }
+  .lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: var(--surface); }
+  .lang button { border: 0; background: none; font: 700 13px "Nunito Sans", sans-serif; padding: 6px 11px; cursor: pointer; color: var(--muted); }
+  .lang button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; padding: 12px 22px; font-weight: 700; font-size: 15px; text-decoration: none; transition: transform .15s, box-shadow .15s; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-main { background: var(--accent); color: #fff; box-shadow: 0 6px 16px rgba(184, 85, 58, .28); }
+  .btn-ghost { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+  nav .btn { padding: 8px 16px; font-size: 14px; }
 
-                  <div class="role">Technical Product Owner @Healthy Beauty</div>
-                  <ul class="achievements">
-                  <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQxxK282hG_Ji_zGGurww750_-xiq-RQUyqbeULfQE0TalLfL_82oU8wQH6h85gUdPlhFyIbNkHxEbz/embed?start=false&loop=true&delayms=3000" frameborder="0" width="100%" height="480" allowfullscreen="true" mozallowfullscreen="true"
-                     webkitallowfullscreen="true"></iframe></ul>
-               </div>
-            </div>
-            <div class="experience-item">
-               <div class="experience-meta">
-                  <div class="company">FPT University</div>
-                  <div class="period">Jan 2021 – May 2021 | HCMC, Vietnam</div>
-               </div>
-               <div class="experience-content">
-                  <div class="role">Backend Developer & Business Analyst @MAVCA</div>
-                  <ul class="achievements">
-                     <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQ2cT3Ra9cK4AAYfLF3dWDrkZt912UluVC5vXmFp9KykbTYNlrBVweXtFWXhLkX0A/embed?start=false&loop=true&delayms=3000" frameborder="0" width="100%" height="485" allowfullscreen="true" mozallowfullscreen="true"
-                        webkitallowfullscreen="true"></iframe>
-                     <li>Summary Document: <a href="https://drive.google.com/file/d/1ag8GhUxThJUYYiitYx1CIHvyU242U6yV/view?usp=drive_link" target="_blank"><i class="fas fa-link"></i> Link Google Drive </a></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </section>
-      <section id="achievements">
-         <div class="container fade-in">
-            <h2>
-               <i class="fas fa-trophy"></i> Core Achievements
-            </h2>
-            <div class="core-achievements">
-               <div class="achievement-card achievement-item">
-                  <h3>Stakeholder Communication</h3>
-                  <p>Led cross-functional teams to achieve 20% increase in efficiency through improved communication protocols and streamlined workflows.</p>
-               </div>
-               <div class="achievement-card achievement-item">
-                  <h3>Technical Documentation</h3>
-                  <p>Reduced partner onboarding time by 30% through comprehensive API documentation and integration guides.</p>
-               </div>
-               <div class="achievement-card achievement-item">
-                  <h3>Product Development</h3>
-                  <p>Successfully delivered 10+ product requirement documents and managed complete product development lifecycle.</p>
-               </div>
-            </div>
-         </div>
-      </section>
-      <section id="skills">
-         <div class="container fade-in">
-            <h2>
-               <i class="fas fa-gear"></i> Skills
-            </h2>
-            <div class="skills-grid">
-               <div class="skill-category">
-                  <h3>
-                     <i class="fas fa-user-friends"></i> Soft Skills
-                  </h3>
-                  <hr />
-                  <li>Critical Thinking</li>
-                  <li>Problem Solving</li>
-                  <li>Analytical Skills</li>
-                  <li>Communication</li>
-                  <li>Cross-functional Collaboration</li>
-                  <li>Presentation</li>
-               </div>
-               <div class="skill-category">
-                  <h3>
-                     <i class="fas fa-laptop-code"></i> Tech Stack
-                  </h3>
-                  <hr />
-                  <p><strong>Product Management & Strategy</strong></p>
-                  <li>Stakeholder Management</li>
-                  <li>Agile Methodologies (Scrum)</li>
-                  <li>A/B Testing</li>
-                  <li>Software Documentation</li>
-                  <li>Product Backlog Management</li>
-                  <li>Research & Analysis</li>
-                  <li>Budget & Time Estimation</li>
-                  <li>Flow Diagrams</li>
-               </div>
-               <div class="skill-category">
-                  <h3><i class="fas fa-tools"></i> Tools</h3>
-                  <hr />
-                  <li>Figma</li>
-                  <li>Jira</li>
-                  <li>Confluence</li>
-                  <li>SQL</li>
-                  <li>Amplitude</li>
-                  <li>Microsoft Office</li>
-                  <h3><i class="fas fa-industry"></i> Industry Knowledge</h3>
-                  <hr />
-                  <li>E-Commerce</li>
-                  <li>Retail</li>
-                  <li>Crypto</li>
-                  <li>Non-profit / NGO</li>
-               </div>
-            </div>
-         </div>
-      </section>
-      <footer>
-         <div class="container">
-            <p>© 2024 Katie Cao. All rights reserved.</p>
-            <p>Product Manager | HCMC, Vietnam</p>
-            <p>
-               <a href="mailto:katiecaooo@gmail.com">katiecaooo@gmail.com</a>
-            </p>
-         </div>
-      </footer>
-   </body>
+  /* Hero */
+  .hero { padding: 72px 0 56px; }
+  .hero-grid { display: grid; grid-template-columns: 1.25fr .9fr; gap: 56px; align-items: center; }
+  .hello { font-size: 18px; color: var(--muted); margin-bottom: 8px; }
+  .hero h1 { font-size: clamp(40px, 5.6vw, 62px); letter-spacing: -.5px; }
+  .hero .role { font-family: Fraunces, serif; font-size: 22px; color: var(--accent); margin: 14px 0 18px; }
+  .hero p.intro { font-size: 18.5px; max-width: 560px; margin: 0 0 28px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .meta { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 26px; font-size: 15px; color: var(--muted); }
+  .meta span::before { content: "•"; color: var(--accent); margin-right: 8px; }
+  .photo { position: relative; justify-self: center; width: min(360px, 100%); }
+  .photo::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; background: var(--peach); border-radius: 46% 54% 42% 58% / 52% 44% 56% 48%; }
+  .photo img { position: relative; width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 30%; border-radius: 42% 58% 46% 54% / 48% 42% 58% 52%; box-shadow: var(--shadow); }
+  .note { position: absolute; left: -34px; bottom: 26px; background: var(--surface); border-radius: 14px; padding: 12px 16px; box-shadow: var(--shadow); font-size: 14px; max-width: 220px; line-height: 1.45; transform: rotate(-2deg); }
+  .note b { display: block; color: var(--accent); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+
+  /* Numbers */
+  .numbers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 8px; }
+  .num { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; }
+  .num strong { display: block; font-family: Fraunces, serif; font-size: 38px; color: var(--accent); line-height: 1.1; }
+  .num span { font-size: 15px; color: var(--muted); }
+
+  /* About */
+  .about { background: var(--peach-2); }
+  .about .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; }
+  .about p { margin: 0 0 16px; }
+  .journey { list-style: none; padding: 0; margin: 6px 0 0; }
+  .journey li { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px dashed #E2CFC1; }
+  .journey li:last-child { border-bottom: 0; }
+  .journey .yr { flex: 0 0 92px; font-weight: 700; color: var(--accent); font-size: 15px; padding-top: 2px; }
+
+  /* Case studies */
+  .cases { display: grid; gap: 28px; }
+  .case { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 36px; box-shadow: var(--shadow); }
+  .case-head { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 22px; }
+  .case-no { font-family: Fraunces, serif; font-size: 44px; color: var(--peach); -webkit-text-stroke: 1.5px var(--accent); line-height: 1; }
+  .case h3 { font-size: 27px; margin-bottom: 6px; }
+  .case .where { color: var(--muted); font-size: 15px; }
+  .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .case-grid h4 { margin: 0 0 8px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+  .case-grid p, .case-grid ul { margin: 0; font-size: 16px; }
+  .case-grid ul { padding-left: 18px; }
+  .case-grid li { margin-bottom: 6px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .tags span { background: var(--peach-2); color: var(--accent-ink); border-radius: 999px; padding: 4px 12px; font-size: 13px; font-weight: 700; }
+
+  /* Experience */
+  .exp { background: var(--surface); }
+  .timeline { position: relative; margin-left: 8px; }
+  .timeline::before { content: ""; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+  .job { position: relative; padding: 0 0 30px 34px; }
+  .job::before { content: ""; position: absolute; left: -6px; top: 7px; width: 14px; height: 14px; border-radius: 50%; background: var(--surface); border: 3px solid var(--accent); }
+  .job.now::before { background: var(--accent); }
+  .job-top { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .job h3 { font-size: 21px; }
+  .job h3 small { font-family: "Nunito Sans", sans-serif; font-weight: 600; color: var(--muted); font-size: 16px; }
+  .job .when { font-weight: 700; color: var(--accent); font-size: 14px; white-space: nowrap; padding-top: 4px; }
+  .job p { margin: 6px 0 0; max-width: 760px; }
+
+  /* AnimaLife */
+  .anima .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .shots { position: relative; padding: 10px 20px 40px 0; }
+  .shot { background: #fff; padding: 10px 10px 14px; border-radius: 10px; box-shadow: var(--shadow); }
+  .shot img { border-radius: 4px; }
+  .shot.one { transform: rotate(-2.5deg); }
+  .shot.two { position: absolute; width: 62%; right: 0; bottom: 0; transform: rotate(3deg); }
+  .checks { list-style: none; padding: 0; margin: 18px 0 24px; }
+  .checks li { position: relative; padding-left: 30px; margin-bottom: 12px; }
+  .checks li::before { content: "✓"; position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--peach); color: var(--accent); font-weight: 700; font-size: 13px; display: grid; place-items: center; margin-top: 3px; }
+
+  /* Skills */
+  .skill-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .skill-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+  .skill-card h3 { font-size: 20px; margin-bottom: 12px; }
+  .skill-card .tags { margin-top: 0; }
+  .certs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 36px; }
+  .cert { display: flex; justify-content: space-between; gap: 12px; background: var(--peach-2); border-radius: 14px; padding: 16px 20px; }
+  .cert b { display: block; }
+  .cert span { color: var(--muted); font-size: 15px; }
+  .cert .yr { color: var(--accent); font-weight: 700; white-space: nowrap; }
+
+  /* Contact */
+  .contact-card { background: var(--ink); color: #F3E9E1; border-radius: 28px; padding: 56px; text-align: center; }
+  .contact-card h2 { color: #fff; font-size: clamp(30px, 4vw, 44px); margin-bottom: 12px; }
+  .contact-card h2 em { color: #F2A98F; }
+  .contact-card p { color: #D9CBC0; max-width: 560px; margin: 0 auto 30px; }
+  .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .contact-links a { background: rgba(255,255,255,.08); color: #fff; border: 1px solid rgba(255,255,255,.18); text-decoration: none; border-radius: 999px; padding: 10px 18px; font-weight: 700; font-size: 15px; }
+  .contact-links a:hover { background: var(--accent); border-color: var(--accent); }
+  .contact-links a.primary { background: var(--accent); border-color: var(--accent); }
+  footer { text-align: center; color: var(--muted); font-size: 14px; padding: 28px 0 40px; }
+
+  @media (max-width: 900px) {
+    .links { display: none; }
+    .hero-grid, .about .wrap, .anima .wrap { grid-template-columns: 1fr; gap: 40px; }
+    .photo { order: -1; width: min(280px, 80%); }
+    .note { left: auto; right: -12px; bottom: -8px; }
+    .numbers { grid-template-columns: repeat(2, 1fr); }
+    .case-grid, .skill-groups, .certs { grid-template-columns: 1fr; }
+    .case { padding: 26px 22px; }
+    section { padding: 64px 0; }
+    .contact-card { padding: 40px 22px; }
+  }
+  @media (max-width: 520px) {
+    nav .btn { display: none; }
+    body { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Katie<span>.</span></a>
+    <div class="links">
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#cases" data-i18n="nav.cases">Case studies</a>
+      <a href="#experience" data-i18n="nav.exp">Experience</a>
+      <a href="#animalife">AnimaLife</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="vi" aria-pressed="false">VI</button>
+    </div>
+    <a class="btn btn-main" href="assets/Thanh_Thu_Katie_Product_Owner_CV.pdf" download data-i18n="nav.cv">Download CV</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hello" data-i18n="hero.hello">Hi there, I'm</div>
+      <h1>Thanh Thu <em class="h">(Katie)</em></h1>
+      <div class="role" data-i18n="hero.role">Product Owner · Ho Chi Minh City</div>
+      <p class="intro" data-i18n="hero.intro">I turn <b>complex business rules into clear requirements</b>, then work side by side with developers and QA until the feature is live. I started as a software engineer, so I speak both business and tech.</p>
+      <div class="cta">
+        <a class="btn btn-main" href="#cases" data-i18n="hero.cta1">See my case studies</a>
+        <a class="btn btn-ghost" href="assets/Thanh_Thu_Katie_Product_Owner_CV.pdf" download data-i18n="hero.cta2">Download CV (PDF)</a>
+      </div>
+      <div class="meta">
+        <span data-i18n="hero.m1">2.5+ years in product</span>
+        <span data-i18n="hero.m2">Open to hybrid & remote</span>
+        <span data-i18n="hero.m3">English & Vietnamese</span>
+      </div>
+    </div>
+    <div class="photo">
+      <img src="docs/assets/profile.jpg" alt="Photo of Thanh Thu (Katie)" width="360" height="450">
+      <div class="note"><b data-i18n="hero.noteT">Right now</b><span data-i18n="hero.note">Caring for my little one, building AnimaLife with AI, and getting ready for my next team.</span></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="numbers" style="margin-top:56px">
+      <div class="num"><strong>2.5+</strong><span data-i18n="n1">years in product roles</span></div>
+      <div class="num"><strong>3</strong><span data-i18n="n2">vendor APIs integrated</span></div>
+      <div class="num"><strong>100+</strong><span data-i18n="n3">SKUs connected via APIs</span></div>
+      <div class="num"><strong>~40</strong><span data-i18n="n4">screens specified</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" data-i18n="about.eye">About me</div>
+      <h2 class="sec-title" data-i18n="about.title">From writing code to <em class="h">shaping products</em></h2>
+    </div>
+    <div>
+      <p data-i18n="about.p1">I studied Software Engineering at FPT University and began my career building REST APIs. Very quickly I noticed I cared most about the questions before the code: <b>who is this for, what problem does it solve, and what happens when things go wrong?</b></p>
+      <p data-i18n="about.p2">That curiosity took me to Tiki as an Associate Product Manager, then to Healiverse as a Technical Product Owner. Along the way, my time as a QA tester taught me to think in edge cases, and that is now how I write acceptance criteria.</p>
+      <p data-i18n="about.p3">Today I'm on a career break with my newborn, and I keep my skills sharp by building <b>AnimaLife</b> with an AI coding agent. I'm ready for my next product team.</p>
+      <ul class="journey">
+        <li><span class="yr">2021</span><span data-i18n="j1">Backend Developer & Business Analyst · FPT</span></li>
+        <li><span class="yr">2021–22</span><span data-i18n="j2">Associate Product Manager · Tiki</span></li>
+        <li><span class="yr">2023</span><span data-i18n="j3">QA Tester (Freelance) · Neutronpay & others</span></li>
+        <li><span class="yr">2024–25</span><span data-i18n="j4">Technical Product Owner · Healiverse</span></li>
+        <li><span class="yr">2025–now</span><span data-i18n="j5">Career break · building AnimaLife</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="cases.eye">Case studies</div>
+    <h2 class="sec-title" data-i18n="cases.title">How I work, <em class="h">in three stories</em></h2>
+    <p class="sec-lead" data-i18n="cases.lead">Each story shows the problem, what I did as the product person, and what changed.</p>
+    <div class="cases">
+
+      <article class="case">
+        <div class="case-head"><div class="case-no">01</div><div>
+          <h3 data-i18n="c1.t">Making digital codes safe with real-time vendor APIs</h3>
+          <div class="where" data-i18n="c1.w">Tiki · Value-Added Services (VAS) · Associate Product Manager</div>
+        </div></div>
+        <div class="case-grid">
+          <div><h4 data-i18n="lbl.p">The problem</h4><p data-i18n="c1.p">Digital codes (top-ups, game cards, vouchers) were stored in our own database. That meant risk of <b>leaked codes, stock that didn't match, and codes that expired</b> before they were sold.</p></div>
+          <div><h4 data-i18n="lbl.d">What I did</h4><ul data-i18n="c1.d"><li>Owned the VAS product area and its roadmap</li><li>Integrated <b>3 vendor APIs covering 100+ SKUs</b>: workflows, business rules, error handling and fallbacks</li><li>Ran API testing and UAT, checking data with SQL</li><li>Specified <b>about 20 screens</b> for retail buyers, wholesale buyers and admins</li></ul></div>
+          <div><h4 data-i18n="lbl.o">The outcome</h4><ul data-i18n="c1.o"><li>Codes now come <b>live from vendors</b>, cutting leaks, mismatches and expiry</li><li>Same approach reused for Vouchers, widening the product range</li><li>Launched a <b>wholesale channel</b> and secured better vendor commissions</li></ul></div>
+        </div>
+        <div class="tags"><span>Vendor APIs</span><span>Business rules</span><span>UAT</span><span>SQL</span><span>Roadmap</span></div>
+      </article>
+
+      <article class="case">
+        <div class="case-head"><div class="case-no">02</div><div>
+          <h3 data-i18n="c2.t">Taking over a platform with no documentation</h3>
+          <div class="where" data-i18n="c2.w">Tiki · TicketBox (acquired event-ticketing platform)</div>
+        </div></div>
+        <div class="case-grid">
+          <div><h4 data-i18n="lbl.p">The problem</h4><p data-i18n="c2.p">Tiki acquired TicketBox, but the platform came <b>without any documentation</b>. Nobody had a full picture of how it worked, and some workflows were broken or incomplete.</p></div>
+          <div><h4 data-i18n="lbl.d">What I did</h4><ul data-i18n="c2.d"><li>Mapped and documented the system screen by screen</li><li>Found broken and incomplete workflows and proposed fixes</li><li>Coordinated the <b>VNPay payment integration</b> with the dev team</li></ul></div>
+          <div><h4 data-i18n="lbl.o">The outcome</h4><ul data-i18n="c2.o"><li>The team finally had a shared, written map of the product</li><li><b>More successful payments</b> and a faster checkout</li></ul></div>
+        </div>
+        <div class="tags"><span>Discovery</span><span>Documentation</span><span>Payments</span><span>VNPay</span></div>
+      </article>
+
+      <article class="case">
+        <div class="case-head"><div class="case-no">03</div><div>
+          <h3 data-i18n="c3.t">Designing a two-sided B2B marketplace</h3>
+          <div class="where" data-i18n="c3.w">Healiverse · Healthy Beauty (dietary supplements) · Technical Product Owner</div>
+        </div></div>
+        <div class="case-grid">
+          <div><h4 data-i18n="lbl.p">The problem</h4><p data-i18n="c3.p">A new marketplace needed to serve <b>two very different users</b>: sellers managing products, stock, orders and invoices, and buyers who want advice before they order.</p></div>
+          <div><h4 data-i18n="lbl.d">What I did</h4><ul data-i18n="c3.d"><li>Researched competing online pharmacy platforms</li><li>Wrote the proposal, plan and user journeys for both sides</li><li>Specified <b>20+ screens and modules</b> and an <b>AI chatbot</b> with 4 functions</li><li>Led a <b>4-person cross-functional team</b> and presented progress to partners</li></ul></div>
+          <div><h4 data-i18n="lbl.o">The outcome</h4><ul data-i18n="c3.o"><li>Clear specs the team could build from, with acceptance criteria for each feature</li><li>Delivered <b>2 third-party integrations</b>: e-invoices and shipping orders</li></ul></div>
+        </div>
+        <div class="tags"><span>B2B marketplace</span><span>User journeys</span><span>AI chatbot</span><span>Integrations</span><span>Scrum</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="exp" id="experience">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="exp.eye">Experience</div>
+    <h2 class="sec-title" data-i18n="exp.title">My <em class="h">road so far</em></h2>
+    <p class="sec-lead" data-i18n="exp.lead">The short version. The full details are in my CV.</p>
+    <div class="timeline">
+      <div class="job now"><div class="job-top"><h3><span data-i18n="e0.r">Career Break</span> <small data-i18n="e0.o">· Parental leave</small></h3><span class="when" data-i18n="e0.d">Jul 2025 – Present</span></div><p data-i18n="e0.x">Caring for my newborn, and building AnimaLife with Claude Code to keep my product skills sharp.</p></div>
+      <div class="job"><div class="job-top"><h3>Technical Product Owner <small>· Healiverse</small></h3><span class="when" data-i18n="e1.d">Jan 2024 – Jun 2025</span></div><p data-i18n="e1.x">Two-sided B2B marketplace for dietary supplements: 20+ screens, an AI chatbot, e-invoice and shipping integrations. Also built the frontend of a dental clinic's appointment-booking website.</p></div>
+      <div class="job"><div class="job-top"><h3>QA Tester <small data-i18n="e2.o">· Freelance · Neutronpay & other clients</small></h3><span class="when" data-i18n="e2.d">Mar 2023 – Dec 2023</span></div><p data-i18n="e2.x">Black-box testing of fintech and crypto products, including a crypto wallet app. Wrote test cases, logged defects and retested fixes with developers.</p></div>
+      <div class="job"><div class="job-top"><h3>Associate Product Manager <small>· Tiki</small></h3><span class="when" data-i18n="e3.d">Nov 2021 – Dec 2022</span></div><p data-i18n="e3.x">VAS, Voucher, TikiVIP and TicketBox. Owned VAS and its roadmap, integrated 3 vendor APIs, launched a wholesale channel and delivered 10+ PRDs.</p></div>
+      <div class="job"><div class="job-top"><h3>Backend Developer <small>· FPT Software</small></h3><span class="when" data-i18n="e4.d">Jun 2021 – Oct 2021</span></div><p data-i18n="e4.x">REST APIs and SQL data-migration queries for Shiseido and General Electric projects, in a Scrum team.</p></div>
+      <div class="job"><div class="job-top"><h3>Backend Developer & Business Analyst <small>· FPT University</small></h3><span class="when" data-i18n="e5.d">Jan 2021 – May 2021</span></div><p data-i18n="e5.x">Gathered requirements and drew ERD, use-case, sequence and screen-flow diagrams for the MAVCA project.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="anima" id="animalife">
+  <div class="wrap">
+    <div class="shots">
+      <div class="shot one"><img src="assets/animalife-home.jpg" alt="AnimaLife home screen with pixel-art animals" width="1280" height="800" loading="lazy"></div>
+      <div class="shot two"><img src="assets/animalife-memorial.jpg" alt="AnimaLife memorial page summarising an animal's life" width="1280" height="500" loading="lazy"></div>
+    </div>
+    <div>
+      <div class="eyebrow" data-i18n="an.eye">Personal project · 2026</div>
+      <h2 class="sec-title">AnimaLife <em class="h" data-i18n="an.sub">built with AI</em></h2>
+      <p data-i18n="an.p">A life-simulation web game: you're born as a random animal, in a random year and country, and your choices shape how the story ends. I was the <b>product owner</b>, and <b>Claude Code</b> was my development team.</p>
+      <ul class="checks">
+        <li data-i18n="an.c1">Wrote the product idea, game rules and design docs for every species</li>
+        <li data-i18n="an.c2"><b>47 species and 189 breeds</b>, in <b>3 languages</b> (English, Vietnamese, German)</li>
+        <li data-i18n="an.c3">Set up checks to <b>verify the AI's output</b>: a balance simulator, translation checks and test pages</li>
+      </ul>
+      <div class="tags"><span>Claude Code</span><span>AI-assisted development</span><span>Design docs</span><span>i18n</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="padding-top:20px">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="sk.eye">Skills & learning</div>
+    <h2 class="sec-title" data-i18n="sk.title">What I bring <em class="h">to the team</em></h2>
+    <div class="skill-groups" style="margin-top:32px">
+      <div class="skill-card"><h3 data-i18n="sk.g1">Product</h3><div class="tags"><span>PRDs</span><span>User stories</span><span>Acceptance criteria</span><span>Business rules</span><span>User flows</span><span>Wireframes</span><span>Backlog</span><span>UAT</span><span>Roadmap</span></div></div>
+      <div class="skill-card"><h3 data-i18n="sk.g2">Technical</h3><div class="tags"><span>REST APIs</span><span>API integration</span><span>SQL</span><span>ERD</span><span>Black-box testing</span><span>Postman</span><span>Swagger</span></div></div>
+      <div class="skill-card"><h3 data-i18n="sk.g3">Tools & ways of working</h3><div class="tags"><span>Jira</span><span>Confluence</span><span>Figma</span><span>Amplitude</span><span>Claude Code</span><span>Agile</span><span>Scrum</span></div></div>
+    </div>
+    <div class="certs">
+      <div class="cert"><div><b data-i18n="ce.1">Bachelor of Software Engineering</b><span>FPT University</span></div><span class="yr">2021</span></div>
+      <div class="cert"><div><b data-i18n="ce.2">Pedagogical Training for Lecturers</b><span data-i18n="ce.2o">Hanoi Pedagogical University 2</span></div><span class="yr">2025</span></div>
+      <div class="cert"><div><b>IELTS Academic 6.0</b><span>British Council</span></div><span class="yr">2025</span></div>
+      <div class="cert"><div><b><a href="https://www.coursera.org/account/accomplishments/specialization/certificate/FWSJNSVNXLXH" target="_blank" rel="noopener">Project Management Specialization</a></b><span>Coursera</span></div><span class="yr">2020</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:24px">
+  <div class="wrap">
+    <div class="contact-card">
+      <h2 data-i18n="ct.title">Let's build something <em>people love</em></h2>
+      <p data-i18n="ct.p">I'm looking for a Product Owner role in Vietnam or remote. If you're hiring, or just want to talk products, I'd love to hear from you.</p>
+      <div class="contact-links">
+        <a class="primary" href="mailto:katiecaooo@gmail.com">katiecaooo@gmail.com</a>
+        <a href="https://www.linkedin.com/in/katiecaooo" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://wa.me/84988388736" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://t.me/katiecaooo" target="_blank" rel="noopener">Telegram</a>
+        <a href="sms:+84988388736">iMessage</a>
+        <a href="tel:+84988388736">(+84) 988 388 736</a>
+      </div>
+      <div style="margin-top:26px"><a class="btn btn-ghost" href="assets/Thanh_Thu_Katie_Product_Owner_CV.pdf" download data-i18n="hero.cta2">Download CV (PDF)</a></div>
+    </div>
+  </div>
+</section>
+
+<footer data-i18n="foot">© 2026 Thanh Thu (Katie) · Last updated 23 Nov 2026</footer>
+
+<script>
+  // Vietnamese text. English is the HTML itself and is restored when switching back.
+  const VI = {
+    "nav.about": "Giới thiệu", "nav.cases": "Dự án tiêu biểu", "nav.exp": "Kinh nghiệm", "nav.contact": "Liên hệ", "nav.cv": "Tải CV",
+    "hero.hello": "Xin chào, mình là",
+    "hero.role": "Product Owner · TP. Hồ Chí Minh",
+    "hero.intro": "Mình biến <b>những quy tắc nghiệp vụ phức tạp thành yêu cầu rõ ràng</b>, rồi đồng hành cùng developer và QA cho đến khi tính năng được ra mắt. Mình xuất thân là kỹ sư phần mềm, nên hiểu được cả ngôn ngữ kinh doanh lẫn kỹ thuật.",
+    "hero.cta1": "Xem dự án tiêu biểu", "hero.cta2": "Tải CV (PDF)",
+    "hero.m1": "Hơn 2,5 năm làm sản phẩm", "hero.m2": "Sẵn sàng làm hybrid & từ xa", "hero.m3": "Tiếng Anh & tiếng Việt",
+    "hero.noteT": "Hiện tại", "hero.note": "Mình đang chăm bé, xây dựng AnimaLife cùng AI và chuẩn bị cho đội ngũ tiếp theo.",
+    "n1": "năm làm vị trí sản phẩm", "n2": "API đối tác đã tích hợp", "n3": "SKU kết nối qua API", "n4": "màn hình đã đặc tả",
+    "about.eye": "Về mình",
+    "about.title": "Từ viết code đến <em class=\"h\">định hình sản phẩm</em>",
+    "about.p1": "Mình học Kỹ thuật Phần mềm tại Đại học FPT và bắt đầu sự nghiệp bằng việc viết REST API. Rất nhanh, mình nhận ra điều mình quan tâm nhất là những câu hỏi trước khi viết code: <b>sản phẩm dành cho ai, giải quyết vấn đề gì, và chuyện gì xảy ra khi có lỗi?</b>",
+    "about.p2": "Sự tò mò đó đưa mình đến Tiki với vai trò Associate Product Manager, rồi đến Healiverse với vai trò Technical Product Owner. Thời gian làm QA dạy mình suy nghĩ theo các trường hợp ngoại lệ, và đó chính là cách mình viết tiêu chí nghiệm thu bây giờ.",
+    "about.p3": "Hiện mình đang tạm nghỉ để chăm con nhỏ, và vẫn rèn luyện kỹ năng bằng cách xây dựng <b>AnimaLife</b> cùng một AI coding agent. Mình đã sẵn sàng cho đội ngũ sản phẩm tiếp theo.",
+    "j1": "Backend Developer & Business Analyst · FPT", "j2": "Associate Product Manager · Tiki", "j3": "QA Tester (Freelance) · Neutronpay và các khách hàng khác",
+    "j4": "Technical Product Owner · Healiverse", "j5": "Tạm nghỉ · xây dựng AnimaLife",
+    "cases.eye": "Dự án tiêu biểu", "cases.title": "Cách mình làm việc, <em class=\"h\">qua ba câu chuyện</em>",
+    "cases.lead": "Mỗi câu chuyện gồm vấn đề, những gì mình đã làm với vai trò người làm sản phẩm, và kết quả.",
+    "lbl.p": "Vấn đề", "lbl.d": "Mình đã làm gì", "lbl.o": "Kết quả",
+    "c1.t": "Bảo vệ mã số bằng API đối tác theo thời gian thực",
+    "c1.w": "Tiki · Dịch vụ giá trị gia tăng (VAS) · Associate Product Manager",
+    "c1.p": "Mã số (nạp tiền, thẻ game, voucher) được lưu trong cơ sở dữ liệu của chính mình. Điều đó dẫn đến rủi ro <b>lộ mã, tồn kho lệch và mã hết hạn</b> trước khi bán được.",
+    "c1.d": "<li>Phụ trách mảng VAS và lộ trình sản phẩm</li><li>Tích hợp <b>3 API đối tác với hơn 100 SKU</b>: luồng nghiệp vụ, quy tắc, xử lý lỗi và phương án dự phòng</li><li>Kiểm thử API và UAT, kiểm tra dữ liệu bằng SQL</li><li>Đặc tả <b>khoảng 20 màn hình</b> cho người mua lẻ, người mua sỉ và quản trị viên</li>",
+    "c1.o": "<li>Mã được lấy <b>trực tiếp từ đối tác</b>, giảm lộ mã, lệch tồn kho và hết hạn</li><li>Áp dụng cách làm tương tự cho Voucher, mở rộng danh mục sản phẩm</li><li>Ra mắt <b>kênh bán sỉ</b> và đạt mức hoa hồng tốt hơn với đối tác</li>",
+    "c2.t": "Tiếp quản một nền tảng không có tài liệu",
+    "c2.w": "Tiki · TicketBox (nền tảng bán vé sự kiện được mua lại)",
+    "c2.p": "Tiki mua lại TicketBox, nhưng nền tảng <b>không có bất kỳ tài liệu nào</b>. Không ai nắm rõ toàn bộ cách hệ thống hoạt động, và một số luồng bị lỗi hoặc chưa hoàn chỉnh.",
+    "c2.d": "<li>Tìm hiểu và viết tài liệu cho hệ thống theo từng màn hình</li><li>Phát hiện các luồng bị lỗi, chưa hoàn chỉnh và đề xuất cách sửa</li><li>Điều phối việc <b>tích hợp cổng thanh toán VNPay</b> cùng đội phát triển</li>",
+    "c2.o": "<li>Cả đội có một bản đồ sản phẩm chung, rõ ràng bằng văn bản</li><li><b>Nhiều giao dịch thanh toán thành công hơn</b> và thanh toán nhanh hơn</li>",
+    "c3.t": "Thiết kế sàn thương mại B2B hai phía",
+    "c3.w": "Healiverse · Healthy Beauty (thực phẩm chức năng) · Technical Product Owner",
+    "c3.p": "Một sàn mới cần phục vụ <b>hai nhóm người dùng rất khác nhau</b>: người bán quản lý sản phẩm, tồn kho, đơn hàng và hóa đơn; người mua cần được tư vấn trước khi đặt hàng.",
+    "c3.d": "<li>Nghiên cứu các nền tảng nhà thuốc trực tuyến đối thủ</li><li>Viết đề xuất, kế hoạch và hành trình người dùng cho cả hai phía</li><li>Đặc tả <b>hơn 20 màn hình và module</b>, cùng một <b>AI chatbot</b> với 4 chức năng</li><li>Dẫn dắt <b>đội 4 người đa chức năng</b> và trình bày tiến độ với đối tác</li>",
+    "c3.o": "<li>Tài liệu đặc tả rõ ràng để đội phát triển, kèm tiêu chí nghiệm thu cho từng tính năng</li><li>Hoàn thành <b>2 tích hợp bên thứ ba</b>: hóa đơn điện tử và tạo đơn vận chuyển</li>",
+    "exp.eye": "Kinh nghiệm", "exp.title": "Chặng đường <em class=\"h\">của mình</em>", "exp.lead": "Phiên bản ngắn gọn. Chi tiết đầy đủ có trong CV.",
+    "e0.r": "Tạm nghỉ", "e0.o": "· Nghỉ chăm con", "e0.d": "07/2025 – Hiện tại", "e0.x": "Chăm con nhỏ và xây dựng AnimaLife bằng Claude Code để giữ vững kỹ năng làm sản phẩm.",
+    "e1.d": "01/2024 – 06/2025", "e1.x": "Sàn B2B hai phía cho thực phẩm chức năng: hơn 20 màn hình, AI chatbot, tích hợp hóa đơn điện tử và vận chuyển. Ngoài ra còn xây dựng frontend cho website đặt lịch của một phòng khám nha khoa.",
+    "e2.o": "· Freelance · Neutronpay và các khách hàng khác", "e2.d": "03/2023 – 12/2023", "e2.x": "Kiểm thử hộp đen cho sản phẩm fintech và crypto, gồm một ứng dụng ví crypto. Viết test case, ghi nhận lỗi và kiểm tra lại cùng developer.",
+    "e3.d": "11/2021 – 12/2022", "e3.x": "VAS, Voucher, TikiVIP và TicketBox. Phụ trách VAS và lộ trình sản phẩm, tích hợp 3 API đối tác, ra mắt kênh bán sỉ và hoàn thành hơn 10 PRD.",
+    "e4.d": "06/2021 – 10/2021", "e4.x": "Viết REST API và câu lệnh SQL chuyển đổi dữ liệu cho dự án của Shiseido và General Electric, làm việc theo Scrum.",
+    "e5.d": "01/2021 – 05/2021", "e5.x": "Thu thập yêu cầu và vẽ sơ đồ ERD, use-case, sequence và luồng màn hình cho dự án MAVCA.",
+    "an.eye": "Dự án cá nhân · 2026", "an.sub": "xây dựng cùng AI",
+    "an.p": "Một trò chơi mô phỏng cuộc đời trên web: bạn được sinh ra là một con vật ngẫu nhiên, ở một năm và một đất nước ngẫu nhiên, và lựa chọn của bạn quyết định cái kết. Mình là <b>product owner</b>, còn <b>Claude Code</b> là đội phát triển của mình.",
+    "an.c1": "Viết ý tưởng sản phẩm, luật chơi và tài liệu thiết kế cho từng loài",
+    "an.c2": "<b>47 loài và 189 giống</b>, với <b>3 ngôn ngữ</b> (Anh, Việt, Đức)",
+    "an.c3": "Xây dựng các bước <b>kiểm tra kết quả của AI</b>: mô phỏng cân bằng, kiểm tra bản dịch và trang kiểm thử",
+    "sk.eye": "Kỹ năng & học tập", "sk.title": "Những gì mình mang <em class=\"h\">đến cho đội</em>",
+    "sk.g1": "Sản phẩm", "sk.g2": "Kỹ thuật", "sk.g3": "Công cụ & cách làm việc",
+    "ce.1": "Cử nhân Kỹ thuật Phần mềm", "ce.2": "Bồi dưỡng Nghiệp vụ Sư phạm cho Giảng viên", "ce.2o": "Trường Đại học Sư phạm Hà Nội 2",
+    "ct.title": "Cùng xây dựng sản phẩm <em>mọi người yêu thích</em>",
+    "ct.p": "Mình đang tìm vị trí Product Owner tại Việt Nam hoặc làm từ xa. Nếu bạn đang tuyển người, hoặc chỉ muốn trò chuyện về sản phẩm, mình rất mong nhận được tin nhắn của bạn.",
+    "foot": "© 2026 Thanh Thu (Katie) · Cập nhật lần cuối 23/11/2026"
+  };
+  const nodes = [...document.querySelectorAll("[data-i18n]")];
+  const EN = new Map(nodes.map((n) => [n, n.innerHTML]));
+  function setLang(lang) {
+    nodes.forEach((n) => { n.innerHTML = lang === "vi" ? (VI[n.dataset.i18n] ?? EN.get(n)) : EN.get(n); });
+    document.documentElement.lang = lang;
+    document.querySelectorAll(".lang button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === lang)));
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+  }
+  document.querySelectorAll(".lang button").forEach((b) => b.addEventListener("click", () => setLang(b.dataset.lang)));
+  let saved = null; try { saved = localStorage.getItem("lang"); } catch (e) {}
+  if (saved === "vi") setLang("vi");
+</script>
+</body>
 </html>
